@@ -1,7 +1,7 @@
 if (!window.indexedDB) {
   console.log(
     "Your browser doesn't support a stable version of IndexedDB. Such and such feature will not be available."
-    );
+  );
 }
 const $source = document.querySelector('#command');
 const $container = document.querySelector('.container');
@@ -16,11 +16,11 @@ var $state = {
   "diary": {
     "items": []
   },
-  "app" : {
-    "current_date" : getDate()
+  "app": {
+    "current_date": getDate()
   },
-  "summary" : {
-    "total_kcal": 0,    
+  "summary": {
+    "total_kcal": 0,
     "protein": 0,
     "fat": 0,
     "carbs": 0
@@ -31,7 +31,7 @@ function getDate() {
   return parseDate(new Date());
 }
 
-function parseDate(date){
+function parseDate(date) {
   var dd = String(date.getDate()).padStart(2, '0');
   var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
   var yyyy = date.getFullYear();
@@ -40,29 +40,29 @@ function parseDate(date){
 }
 
 function modifyDate(date, modifier) {
-  let dateObj = new Date(date) 
+  let dateObj = new Date(date)
   dateObj.setDate(dateObj.getDate() + modifier)
   return parseDate(dateObj)
 }
 
 function init() {
   var request = window.indexedDB.open("calories_diary", 1);
-  request.onerror = function(event) {
+  request.onerror = function (event) {
     console.log("Failed to create/open database")
   }
-  request.onsuccess = function(event) {
+  request.onsuccess = function (event) {
     $database = event.target.result
     console.log("Database created/opened");
     loadState($state.app.current_date);
   }
-  request.onupgradeneeded = function(event) {
+  request.onupgradeneeded = function (event) {
     console.log("request.onupgradeneeded")
     $database = event.target.result
     var objectStore = $database.createObjectStore("diary", {
       keyPath: "date"
     });
     objectStore.createIndex("string", "string")
-    objectStore.transaction.oncomplete = function(event) {
+    objectStore.transaction.oncomplete = function (event) {
       console.log("Object store created")
     }
   }
@@ -71,17 +71,17 @@ function init() {
 
 function loadState(date) {
   var data = []
-  $date.innerHTML = date 
+  $date.innerHTML = date
   getDiaryItems(date,
     // on record found
     function (record) {
       console.log("Data found")
-      $state.diary = record 
+      $state.diary = record
       resetSummary()
       render()
     },
     //on record not found
-    function (){
+    function () {
       console.log("Data not found!")
       $state.diary.items = []
       resetSummary()
@@ -89,17 +89,18 @@ function loadState(date) {
     });
 }
 
-function resetDiary(){
+function resetDiary() {
   $state.diary.items = []
 }
 
-function resetSummary(){
+function resetSummary() {
   $state.summary.total_kcal = 0
   $state.summary.protein = 0
   $state.summary.fat = 0
   $state.summary.carbs = 0
 }
-function render(){
+
+function render() {
   clearDiaryView()
   for (let id in $state.diary.items) {
     addFoodItemToList($state.diary.items[id].string)
@@ -107,22 +108,22 @@ function render(){
   renderSummary()
 }
 
-function renderSummary(){
- console.log("rendering summary")
+function renderSummary() {
+  console.log("rendering summary")
   console.log($state.summary)
   $summary.innerHTML = `${$state.summary.total_kcal} kcal, ${$state.summary.protein}
   białko, ${$state.summary.fat} tłuszcze, ${$state.summary.carbs} węgle`
 }
 
 
-function getDiaryItems(date,record_found, record_not_found) {
+function getDiaryItems(date, record_found, record_not_found) {
   var objectStore = $database.transaction("diary", "readwrite").objectStore(
     "diary")
   var request = objectStore.get(date)
-  request.onerror = function(event) {
+  request.onerror = function (event) {
     console.log("getDiaryItems() - error getting entry")
   };
-  request.onsuccess = function(event) {
+  request.onsuccess = function (event) {
     var data = event.target.result
     if (data) {
       record_found(data);
@@ -132,9 +133,10 @@ function getDiaryItems(date,record_found, record_not_found) {
   }
 }
 
-function clearDiaryView(){
-    $items.innerHTML = ''
+function clearDiaryView() {
+  $items.innerHTML = ''
 }
+
 function addOrUpdateDiaryItems() {
 
 }
@@ -166,23 +168,25 @@ function parseInput(input) {
   if (found.length >= 3) {
     if (!isNaN(found[0])) {
       dict['quantity'] = found[0]
-    }else{
-      dict['quantity'] = 1 
+    } else {
+      dict['quantity'] = 1
     }
     dict['quantityMod'] = found[1]
-    if(found.length < 3){
+    if (found.length < 3) {
       dict['foodItem'] = found.slice(2)
-      dict['foodItem'] =  dict['foodItem'].join(' ')
+      dict['foodItem'] = dict['foodItem'].join(' ')
+    } else {
+      dict['foodItem'] = found[2]
     }
   }
   return dict
 }
 
-function isQuantityMod(text){
+function isQuantityMod(text) {
   let result = findModifier(text)
-  if(result){
+  if (result) {
     return true
-  }else{
+  } else {
     return false
   }
 }
@@ -231,7 +235,7 @@ function addEntry(input, entry) {
       var grams = entry['mods'][mod]
     }
   }
-  var nutrients = calculateNutrients(input['quantity'],grams, entry['nutrition'])
+  var nutrients = calculateNutrients(input['quantity'], grams, entry['nutrition'])
   console.log(nutrients)
   updateSummary(nutrients)
   renderSummary()
@@ -239,21 +243,21 @@ function addEntry(input, entry) {
   $items.appendChild(div)
 }
 
-function calculateNutrients(quantity, grams, nutrition){
+function calculateNutrients(quantity, grams, nutrition) {
   let nutrients = {
     kcal: 0,
     protein: 0,
     fat: 0,
     carbs: 0
   }
-  nutrients.kcal = calculateNutrient(quantity, grams, nutrition['kcal']); 
+  nutrients.kcal = calculateNutrient(quantity, grams, nutrition['kcal']);
   nutrients.protein = calculateNutrient(quantity, grams, nutrition['protein'])
   nutrients.fat = calculateNutrient(quantity, grams, nutrition['fat'])
   nutrients.carbs = calculateNutrient(quantity, grams, nutrition['carbs'])
   return nutrients
 }
 
-const typeHandler = function(e) {
+const typeHandler = function (e) {
   var dict = parseInput(e.target.textContent)
   var foodItem = findFoodItem(dict['foodItem'])
 }
@@ -287,18 +291,18 @@ function saveStateToDb() {
   var objectStore = $database.transaction("diary", "readwrite").objectStore(
     "diary")
   var request = objectStore.get($state.app.current_date)
-  request.onerror = function(event) {
+  request.onerror = function (event) {
     console.log("error finding entry. creating entry")
   };
-  request.onsuccess = function(event) {
+  request.onsuccess = function (event) {
     var data = event.target.result
     if (data) {
       data.items = $state.diary.items
       var requestUpdate = objectStore.put(data);
-      requestUpdate.onerror = function(event) {
+      requestUpdate.onerror = function (event) {
         console.log("updated")
       };
-      requestUpdate.onsuccess = function(event) {
+      requestUpdate.onsuccess = function (event) {
         console.log("saved")
       };
 
@@ -306,21 +310,21 @@ function saveStateToDb() {
       console.log($state['diary'])
       $state.diary.date = $state.app.current_date
       request_add = objectStore.add($state['diary'])
-      request_add.onsuccess = function(event) {
+      request_add.onsuccess = function (event) {
         console.log("saved")
       }
-      request_add.onerror = function(event) {
+      request_add.onerror = function (event) {
         console.log("error adding record")
       }
     }
   }
 }
 
-function updateSummary(data){
-  $state.summary.total_kcal = $state.summary.total_kcal + data.kcal 
-  $state.summary.protein = $state.summary.protein + data.protein 
-  $state.summary.carbs = $state.summary.carbs + data.carbs 
-  $state.summary.fat = $state.summary.fat + data.fat 
+function updateSummary(data) {
+  $state.summary.total_kcal = $state.summary.total_kcal + data.kcal
+  $state.summary.protein = $state.summary.protein + data.protein
+  $state.summary.carbs = $state.summary.carbs + data.carbs
+  $state.summary.fat = $state.summary.fat + data.fat
 }
 
 $source.addEventListener('keypress', (e) => {
@@ -337,16 +341,16 @@ $source.addEventListener('keypress', (e) => {
 $dateleft.addEventListener('click', (e) => {
   console.log("KAROLOLINA")
   console.log($state.app.current_date)
-  let newDate = modifyDate($state.app.current_date,-1)
-  $state.app.current_date = newDate 
+  let newDate = modifyDate($state.app.current_date, -1)
+  $state.app.current_date = newDate
   console.log(newDate)
   loadState(newDate)
 });
 
 $dateright.addEventListener('click', (e) => {
   console.log($state.app.current_date)
-  let newDate = modifyDate($state.app.current_date,1)
-  $state.app.current_date = newDate 
+  let newDate = modifyDate($state.app.current_date, 1)
+  $state.app.current_date = newDate
   console.log(newDate)
   loadState(newDate)
 });

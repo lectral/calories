@@ -1,2 +1,5 @@
 # calories
-![Demo](https://i.imgur.com/R0MrsLL.gif "Logo Title Text 1")
+Prototype calories counter app
+![Demo GIF](https://i.imgur.com/R0MrsLL.gif)
+![Demo WEB](https://calories.lectral.now.sh/)
+
