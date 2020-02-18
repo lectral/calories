@@ -279,6 +279,7 @@ function onDelete(event){
       console.log("removing" + to_remove)
       removeItemFromDiary(to_remove);
       saveStateToDb();
+      resetSummary();
       render()
     }
   }, 2000);
