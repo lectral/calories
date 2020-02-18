@@ -11,6 +11,7 @@ const $dateright = document.querySelector('#date-right');
 const $items = document.querySelector('#items');
 const $item = document.querySelector('.item');
 const $summary = document.querySelector('#summary')
+var $deleteTimer;
 var $database
 
 var $state = {
@@ -247,26 +248,41 @@ function addEntry(input, entry, item_id) {
   div.id = "i-"+item_id
   div.addEventListener('mousedown', function (event) {
     // simulating hold event
-    event.target.classList.add("hold")
-    setTimeout(function () {
-      if(event.target.classList.contains("hold")){
-        event.target.remove()
-        var to_remove = parseInt(event.target.id.split("-")[1])
-        console.log("removing" + to_remove)
-        removeItemFromDiary(to_remove);
-        saveStateToDb();
-        render()
-      }
-    }, 2000);
+    onDelete(event)
   });
+  
   div.addEventListener('mouseup', function (event) {
+    event.target.classList.remove("hold")
+    clearTimeout($deleteTimer)
+  });
+
+  div.addEventListener('touchstart', function (event) {
     // simulating hold event
-    setTimeout(function () {
+    onDelete(event)
+  });
+
+
+  div.addEventListener('ontouchend', function (event) {
       event.target.classList.remove("hold")
-    }, 2000);
+      clearTimeout($deleteTimer)
   });
   $items.appendChild(div)
   
+}
+
+function onDelete(event){
+  event.target.classList.add("hold")
+  $deleteTimer = setTimeout(function () {
+    if (event.target.classList.contains("hold")) {
+      event.target.remove()
+      var to_remove = parseInt(event.target.id.split("-")[1])
+      console.log("removing" + to_remove)
+      removeItemFromDiary(to_remove);
+      saveStateToDb();
+      render()
+    }
+  }, 2000);
+
 }
 
 function removeItemFromDiary(id){
