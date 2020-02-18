@@ -13,6 +13,7 @@
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="/manifest.json" />
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -62,6 +63,21 @@
   <div class="row">
     <div class="summary" id="summary"></div>
   </div>
+
+  <!-- Service Worker for PWA -->
+  <script>
+    const PATH = '/service-worker.js';
+
+
+    if (isServiceWorkersSupport) {
+      console.log('Registering service worker...');
+      navigator.serviceWorker.register(PATH).then(function () {
+        console.log("Service worker registered.");
+      }).catch(function (err) {
+        console.log("Service worker registration failed: ", err)
+      });
+    }
+  </script>
 
   <script src="db.js"></script>
   <script src="scripts.js"></script>
