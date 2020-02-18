@@ -68,15 +68,12 @@
   <script>
     const PATH = '/service-worker.js';
 
-
-    if (isServiceWorkersSupport) {
       console.log('Registering service worker...');
       navigator.serviceWorker.register(PATH).then(function () {
         console.log("Service worker registered.");
       }).catch(function (err) {
         console.log("Service worker registration failed: ", err)
       });
-    }
   </script>
 
   <script src="db.js"></script>
