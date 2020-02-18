@@ -1,0 +1,63 @@
+@font-face {
+  font-family: mainFont;
+  src: url(raleway_medium.ttf);
+}
+.grid {
+  display: grid;
+  grid-template-columns: 20% 60% 20%; 
+
+}
+input.middle:focus {
+    outline-width: 0;
+}
+
+body {
+  background-color: white;
+  font-family: mainFont;
+  font-size: 1.2em;
+}
+.container {
+  padding-top: 10px;  
+  padding-left: 15px;
+  padding-right: 15px;
+
+}
+.datechange {
+  border: none;
+  background-color: transparent;
+  overflow: hidden;
+  outline: none;
+}
+.summary{
+  padding-top: 10px;
+}
+.items {
+
+}
+.center {
+  grid-template-columns: auto auto auto
+  margin-left: auto;
+  margin-right: auto;
+}  
+
+.left{
+  margin-left: auto;
+  margin-right: auto;
+}
+.bar {
+  padding-bottom: 10px;
+}
+.veritcal-line 
+{
+  width: 1px; /* Line width */ 
+  background-color: black; /* Line color */ 
+  height: 100%; /* Override in-line if you want specific height. */ 
+  float: left; /* Causes the line to float to left of content. You can instead use position:absolute or display:inline-block if this fits better with your design */
+}
+
+.commands {
+  border: none;
+  width: 100%;
+  height: 1.2em;
+  border-bottom: 1px solid #ccc !important;
+}

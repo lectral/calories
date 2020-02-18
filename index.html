@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>The HTML5 Herald</title>
+    <meta name="description" content="Calories">
+    <meta name="author" content="SitePoint">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.json"/>
+    <link rel="stylesheet" href="./styles.css?v=1.0">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="bar grid" id="bar">
+        <div class="right"> </div>
+        <div class="center">
+          <div>
+            <button class="datechange" id="date-left"><</button> 
+          </div>
+          <div>
+            <span id="date">-</span> 
+          </div>
+          <div>
+            <button class="datechange" id="date-right">></button>
+          </div>
+
+        </div>
+        <div class="left"> <img src="./settings-icon.png" height="32" width="32"></img></div>
+      </div>
+      <div class="items" id="items">
+      </div>
+      <div contenteditable="true" class="commands" id="command"></div>
+      <div class="summary" id="summary">
+      </div>
+    </div>
+    <script>
+      const PATH = '/service-worker.js';
+
+
+      if (isServiceWorkersSupport) {
+        console.log('Registering service worker...');
+        navigator.serviceWorker.register(PATH).then(function () {
+          console.log("Service worker registered.");
+        }).catch(function (err) {
+          console.log("Service worker registration failed: ", err)
+        });
+      }
+    </script>
+
+    <script src="db.js"></script>
+    <script src="scripts.js"></script>
+  </body>
+</html>
