@@ -23,3 +23,12 @@
   height: 1.2em;
   border-bottom: 1px solid #ccc !important;
 }
+
+.hold{
+    -webkit-animation: fadein 2.5s linear 1 normal forwards;
+}
+
+@-webkit-keyframes fadein{
+    from { opacity: 1; }
+    to { opacity: 0; }
+}

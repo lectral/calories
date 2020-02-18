@@ -1,8 +1,8 @@
 const $db = {
   "mods" : [ 
     {"id" : "gram" ,"aliases": ["gram", "gramów", "g", "gramy"]},
-    {"id" : "teaspoon" ,"aliases": ["łyżeczek","łyżeczka","łyżeczki"]},
-    {"id" : "spoon" ,"aliases": ["łyżka","łyżek","łyżki"]},
+    {"id" : "teaspoon" ,"aliases": ["łyżeczek","łyżeczka","łyżeczki","lyzeczka","lyzeczek", "lyzeczki"]},
+    {"id" : "spoon" ,"aliases": ["łyżka","łyżek","łyżki","lyzka"]},
     {"id" : "glass" ,"aliases": ["szklanka","szklanek","szklanki"]},
     {"id" : "wrap" ,"aliases": ["placka","placków","placki", "placek"]},
 	{"id" : "ball" ,"aliases": ["kula","kulka","kule", "kulki"]}

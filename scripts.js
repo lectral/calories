@@ -9,11 +9,13 @@ const $date = document.querySelector("#date")
 const $dateleft = document.querySelector('#date-left');
 const $dateright = document.querySelector('#date-right');
 const $items = document.querySelector('#items');
+const $item = document.querySelector('.item');
 const $summary = document.querySelector('#summary')
 var $database
 
 var $state = {
   "diary": {
+    "max_id": 0,
     "items": []
   },
   "app": {
@@ -46,7 +48,8 @@ function modifyDate(date, modifier) {
 }
 
 function init() {
-  var request = window.indexedDB.open("calories_diary", 1);
+  console.log("Initializing app")
+  var request = window.indexedDB.open("calories_diar2y", 2);
   request.onerror = function (event) {
     console.log("Failed to create/open database")
   }
@@ -103,7 +106,7 @@ function resetSummary() {
 function render() {
   clearDiaryView()
   for (let id in $state.diary.items) {
-    addFoodItemToList($state.diary.items[id].string)
+    addFoodItemToList($state.diary.items[id].string, $state.diary.items[id].id)
   }
   renderSummary()
 }
@@ -222,7 +225,7 @@ function findModifier(modifier) {
   return false
 }
 
-function addEntry(input, entry) {
+function addEntry(input, entry, item_id) {
   var div = document.createElement("div");
   if (input['quantityMod'] === 'unit') {
     var mod = entry['mods']['unit']
@@ -240,7 +243,36 @@ function addEntry(input, entry) {
   updateSummary(nutrients)
   renderSummary()
   div.innerHTML = input['input'] + " - " + nutrients.kcal + " kcal";
+  div.className = "item"
+  div.id = "i-"+item_id
+  div.addEventListener('mousedown', function (event) {
+    // simulating hold event
+    event.target.classList.add("hold")
+    setTimeout(function () {
+      if(event.target.classList.contains("hold")){
+        event.target.remove()
+        var to_remove = parseInt(event.target.id.split("-")[1])
+        console.log("removing" + to_remove)
+        removeItemFromDiary(to_remove);
+        saveStateToDb();
+        render()
+      }
+    }, 2000);
+  });
+  div.addEventListener('mouseup', function (event) {
+    // simulating hold event
+    setTimeout(function () {
+      event.target.classList.remove("hold")
+    }, 2000);
+  });
   $items.appendChild(div)
+  
+}
+
+function removeItemFromDiary(id){
+  $state.diary.items = $state.diary.items.filter(function (obj) {
+    return obj.id !== id;
+  });
 }
 
 function calculateNutrients(quantity, grams, nutrition) {
@@ -265,12 +297,12 @@ const typeHandler = function (e) {
 //$source.addEventListener('input', typeHandler)
 //
 
-function addFoodItemToList(text) {
+function addFoodItemToList(text, id) {
   return new Promise((resolve, reject) => {
     var dict = parseInput(text)
     var foodItem = findFoodItem(dict['foodItem'])
     if (foodItem) {
-      addEntry(dict, foodItem)
+      addEntry(dict, foodItem, id)
     }
     $source.blur()
     $source.innerHTML = ''
@@ -282,8 +314,11 @@ function addFoodItemToList(text) {
 
 function saveToState(text) {
   $state['diary']['items'].push({
+    "id" : $state['diary']['max_id'] + 1,
     "string": text
   })
+  $state['diary']['max_id'] = $state['diary']['max_id'] + 1
+  return parseInt($state['diary']['max_id'])
 }
 
 function saveStateToDb() {
@@ -297,6 +332,7 @@ function saveStateToDb() {
   request.onsuccess = function (event) {
     var data = event.target.result
     if (data) {
+      data.max_id = $state.diary.max_id
       data.items = $state.diary.items
       var requestUpdate = objectStore.put(data);
       requestUpdate.onerror = function (event) {
@@ -331,15 +367,14 @@ $source.addEventListener('keypress', (e) => {
   if (e.which === 13) {
     const textContent = e.target.textContent
     e.preventDefault();
-    addFoodItemToList(textContent)
-    saveToState(textContent);
+    var id = saveToState(textContent);
+    addFoodItemToList(textContent, id)
     console.log($state)
     saveStateToDb()
   }
 });
 
 $dateleft.addEventListener('click', (e) => {
-  console.log("KAROLOLINA")
   console.log($state.app.current_date)
   let newDate = modifyDate($state.app.current_date, -1)
   $state.app.current_date = newDate
@@ -354,6 +389,7 @@ $dateright.addEventListener('click', (e) => {
   console.log(newDate)
   loadState(newDate)
 });
+
 
 
 init()
