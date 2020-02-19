@@ -146,7 +146,7 @@ function parseInput(input) {
       dict['quantity'] = 1
       dict['quantityMod'] = found[0]
     }
-    dict['foodItem'] = found[1]
+    dict['foodItem'] = found[1].lower()
   }
 
   if (found.length >= 3) {
@@ -158,9 +158,9 @@ function parseInput(input) {
     dict['quantityMod'] = found[1]
     if (found.length < 3) {
       dict['foodItem'] = found.slice(2)
-      dict['foodItem'] = dict['foodItem'].join(' ')
+      dict['foodItem'] = dict['foodItem'].join(' ').lower()
     } else {
-      dict['foodItem'] = found[2]
+      dict['foodItem'] = found[2].lower()
     }
   }
   return dict

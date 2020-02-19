@@ -1,6 +1,7 @@
 import simplejson as json
 import requests
 import time
+import subprocess
 import os
 #your spreadsheet key here. I'm using an example from the Victorian election campaign
 
@@ -112,8 +113,8 @@ print(json)
 
 f = open('db.json', 'wt', encoding='utf-8')
 f.write(json)
-time.sleep(3)
-os.system("cat db.json")
-os.system("git add db.json")
-os.system("git commit -m \"database update: \""+str(final['version']))
+f.close()
+dbjson_file = os.path.dirname(os.path.realpath(__file__))+"/db.json"
+subprocess.call("git add "+dbjson_file,shell=True,cwd=os.path.dirname(os.path.realpath(__file__)))
+subprocess.call("git commit -m \"database update: \""+str(final['version']),shell=True)
 os.system("git push")
