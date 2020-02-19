@@ -104,7 +104,7 @@ function calculateNutrient(quantity, grams, kcal) {
 function findModifier(modifier) {
   for (let key in $db['mods']) {
     for (let kaliases in $db['mods'][key]['aliases']) {
-      if ($db['mods'][key]['aliases'][kaliases] === modifier) {
+      if ($db['mods'][key]['aliases'][kaliases] === modifier.toLowerCase()) {
         return $db['mods'][key]['id']
       }
     }
