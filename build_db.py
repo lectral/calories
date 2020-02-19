@@ -1,6 +1,7 @@
 import simplejson as json
 import requests
 import time
+import os
 #your spreadsheet key here. I'm using an example from the Victorian election campaign
 
 key_products = "1Gl0Qn6fLnsKJ1HvrK_HAmD6EIV83fl7AP8ctEv_vbHE"
@@ -111,3 +112,7 @@ print(json)
 
 f = open('db.json', 'wt', encoding='utf-8')
 f.write(json)
+
+os.system("git add db.json")
+os.system("git commit -m \"database update: \""+str(final['version']))
+os.system("git push")
