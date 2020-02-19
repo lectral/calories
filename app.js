@@ -117,7 +117,8 @@ function findFoodItem(item) {
   for (let key in $db['products']) {
     var value = $db['products'][key]
     for (let alias in value['aliases']) {
-      if (value['aliases'][alias] === item) {
+      console.log(item.toLowerCase())
+      if (value['aliases'][alias].toLowerCase() === item.toLowerCase()) {
         return value
       }
     }
@@ -146,7 +147,7 @@ function parseInput(input) {
       dict['quantity'] = 1
       dict['quantityMod'] = found[0]
     }
-    dict['foodItem'] = found[1].lower()
+    dict['foodItem'] = found[1]
   }
 
   if (found.length >= 3) {
@@ -158,9 +159,9 @@ function parseInput(input) {
     dict['quantityMod'] = found[1]
     if (found.length < 3) {
       dict['foodItem'] = found.slice(2)
-      dict['foodItem'] = dict['foodItem'].join(' ').lower()
+      dict['foodItem'] = dict['foodItem'].join(' ')
     } else {
-      dict['foodItem'] = found[2].lower()
+      dict['foodItem'] = found[2]
     }
   }
   return dict
