@@ -36,27 +36,32 @@ var $state = {
 
 function init() {
   console.log("Initializing app")
-  var request = window.indexedDB.open("calories_diar2y", 2);
-  request.onerror = function (event) {
-    console.log("Failed to create/open database")
-  }
-  request.onsuccess = function (event) {
-    $database = event.target.result
-    console.log("Database created/opened");
-    //loadState($state.app.current_date);
-    $container.dispatchEvent(new CustomEvent('appinit', {}))
-  }
-  request.onupgradeneeded = function (event) {
-    console.log("request.onupgradeneeded")
-    $database = event.target.result
-    var objectStore = $database.createObjectStore("diary", {
-      keyPath: "date"
-    });
-    objectStore.createIndex("string", "string")
-    objectStore.transaction.oncomplete = function (event) {
-      console.log("Object store created")
+  getJSON("https://calories.lectral.now.sh/db.json",function(err, data){
+    $db = data
+    console.log(data)
+    var request = window.indexedDB.open("calories_diar2y", 2);
+    request.onerror = function (event) {
+      console.log("Failed to create/open database")
     }
-  }
+    request.onsuccess = function (event) {
+      $database = event.target.result
+      console.log("Database created/opened");
+      //loadState($state.app.current_date);
+      $container.dispatchEvent(new CustomEvent('appinit', {}))
+    }
+    request.onupgradeneeded = function (event) {
+      console.log("request.onupgradeneeded")
+      $database = event.target.result
+      var objectStore = $database.createObjectStore("diary", {
+        keyPath: "date"
+      });
+      objectStore.createIndex("string", "string")
+      objectStore.transaction.oncomplete = function (event) {
+        console.log("Object store created")
+      }
+    }
+  })
+ 
 }
 // PARSE
 
