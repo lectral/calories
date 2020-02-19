@@ -154,7 +154,7 @@ function parseInput(input) {
     if (!isNaN(found[0])) {
       dict['quantity'] = found[0]
     } else {
-      dict['quantity'] = 1
+      dict['quantity'] = quantityWords(found[0])
     }
     dict['quantityMod'] = found[1]
     if (found.length < 3) {
@@ -165,6 +165,18 @@ function parseInput(input) {
     }
   }
   return dict
+}
+
+function quantityWords(quantity){
+  if(quantity === "pół" || quantity === "pol" || quantity === "1/2"){
+    return 0.5 
+  }else if(quantity === "1/3"){
+    return 0.33
+  }else if(quantity === "1/4"){
+    return 0.25
+  }else{
+    return 1
+  }
 }
 
 // DB
