@@ -112,7 +112,8 @@ print(json)
 
 f = open('db.json', 'wt', encoding='utf-8')
 f.write(json)
-
+time.sleep(3)
+os.system("cat db.json")
 os.system("git add db.json")
 os.system("git commit -m \"database update: \""+str(final['version']))
 os.system("git push")
