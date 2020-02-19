@@ -39,33 +39,38 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <!-- Date selector section -->
-    <div class="row header">
-      <div class="twelve columns">
+    <div class="row">
+      <div class="twelve columns header">
         <button class="datechange" id="date-left">&lt;</button>
         <span id="date">-</span>
         <button class="datechange" id="date-right">&gt;</button>
-    </div>
-   
-  </div>
-
-  <!-- Food items section -->
-  <div class="row summary section">
-    <div class="twelve columns">
-      <div class="items" id="items">
+  
       </div>
     </div>
-  </div>
 
-  <!-- Commands section -->
-  <div class="row">
-    <div contenteditable="true" class="commands" id="command"></div>
-  </div>
+    <!-- Food items section -->
+    <div class="row summary section">
+      <div class="twelve columns">
+        <div class="items" id="items">
+        </div>
+      </div>
+    </div>
 
-  <!-- Summary section -->
-  <div class="row">
-    <div class="summary" id="summary"></div>
-  </div>
+    <!-- Commands section -->
+    <div class="row">
+      <div contenteditable="true" class="commands" id="command"></div>
+    </div>
 
+    <!-- Summary section -->
+    <div class="row">
+      <div class="summary" id="summary">^ Kliknij i dodaj jakieś papu</div>
+    </div>
+
+    <div class="overlay row">
+      <div class="row"><h4> Ustawienia</h4></div>
+
+    </div>
+  </div>
   <!-- Service Worker for PWA -->
   <script>
     const PATH = '/service-worker.js';
@@ -77,9 +82,14 @@
         console.log("Service worker registration failed: ", err)
       });
   </script>
-
+  
+  <!-- Scripts -->
   <script src="db.js"></script>
-  <script src="scripts.js"></script>
+  <script src="utils.js"></script>
+  <script src="app.js"></script>
+  <script src="events.js"></script>
+  <!-- End of Scripts -->
+  <!-- <script src="scripts.js"></script> -->
   <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
