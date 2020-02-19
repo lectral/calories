@@ -1,5 +1,5 @@
 # calories
 Prototype calories counter app
 
-![Demo WEB](https://calories.lectral.now.sh/)
+[Web demo](https://calories.now.sh)
 
