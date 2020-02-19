@@ -270,6 +270,11 @@ function addToSummary(id, data) {
   $summary.dispatchEvent(new CustomEvent("summary updated", {}))
 }
 
+function cleanSummary(){
+  $state.summary2 = []
+  $summary.dispatchEvent(new CustomEvent('summary updated', {}))
+}
+
 function removeFromSummary(id) {
   $state.summary2 = $state.summary2.filter(function (obj) {
     console.log("summary"+obj.id)

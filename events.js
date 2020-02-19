@@ -84,18 +84,19 @@ function onDateChanged() {
   console.log("date changed")
   $date.innerHTML = getCurrentSelectedDate()
   getDiaryItems(getCurrentSelectedDate(), function (data) {
+    cleanStateItems();
+    cleanSummary();
     if (data) {
-      cleanStateItems();
+
       for (let index in data.items) {
         console.log(data.items[index])
         addItemToState(data.items[index].string, data.items[index].id)
       }
     } else {
       console.log("Data not found!")
-      cleanStateItems();
     }
   },
-    function () { cleanStateItems(); })
+    function () { cleanStateItems(); cleanSummary() })
 }
 
 function onUpdate(event) {
