@@ -37,21 +37,21 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
+  <div class="container" id="main">
     <!-- Date selector section -->
     <div class="row">
       <div class="twelve columns header">
         <button class="datechange" id="date-left">&lt;</button>
         <span id="date">-</span>
         <button class="datechange" id="date-right">&gt;</button>
-  
+        <div class="u-pull-right" id="settings-icon">S</div>
       </div>
     </div>
 
     <!-- Food items section -->
     <div class="row summary section">
       <div class="twelve columns">
-        <div class="items" id="items">
+        <div class="items row" id="items">
         </div>
       </div>
     </div>
@@ -67,8 +67,23 @@
     </div>
 
     <div class="overlay row">
-      <div class="row"><h4> Ustawienia</h4></div>
+      <div class="row"></div>
 
+    </div>
+  </div>
+
+  <div class="container hidden" id="settings">
+    <div class="row">
+      <div class="twelve columns">
+        <div class="u-pull-right" id="close-settings-icon">X</div>
+      </div>
+
+      <div class="row section">
+        <div class="twelve columns">
+          <label for="calorieLimitInput">Limit kalorii</label>
+          <input class="u-full-width" type="text" placeholder="1800" id="calorieLimitInput">
+        </div>
+      </div>
     </div>
   </div>
   <!-- Service Worker for PWA -->

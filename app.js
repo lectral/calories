@@ -10,6 +10,10 @@ const $dateleft = document.querySelector('#date-left');
 const $dateright = document.querySelector('#date-right');
 const $items = document.querySelector('#items');
 const $summary = document.querySelector('#summary')
+const $settingsIcon = document.querySelector("#settings-icon")
+const $closeSettingsIcon = document.querySelector("#close-settings-icon")
+const $main = document.querySelector("#main")
+const $settings = document.querySelector("#settings")
 var $deleteTimer;
 var $database
 

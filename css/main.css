@@ -1,5 +1,12 @@
+body{
+  font-size: 1.8em;
+}
 .header {
   text-align: center;
+}
+
+.settings-icon {
+  position: absolute;
 }
 
 .datechange {
@@ -7,6 +14,13 @@
   background-color: transparent;
   overflow: hidden;
   outline: none;
+}
+
+.flex {
+  display: flex;
+}
+.item {
+  padding-bottom: 5px;
 }
 
 .section {
@@ -39,6 +53,7 @@
 
 .delete {
   color: red;
+  margin-left: 5px;
 }
 .overlay {
   display: none;

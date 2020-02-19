@@ -20,8 +20,10 @@ function onDeleteClick(event){
 function onItemAdd(event){
   console.log(event.detail)
   var div = document.createElement("div");
-  var span_item = document.createElement("span")
-  var span_delete = document.createElement("span")
+  var span_item = document.createElement("div")
+  div.classList.add("flex")
+  span_item.classList.add("item")
+  var span_delete = document.createElement("div")
   var db_data = findFoodItem(event.detail.parsed.foodItem)
   if(db_data){
     console.log("db dta found")
@@ -36,6 +38,7 @@ function onItemAdd(event){
   span_delete.classList.add("delete")
   span_delete.classList.add("hidden")
   span_delete.id = "delete-id-"+event.detail.raw.id
+
   span_item.id = "item-id-"+event.detail.raw.id
   span_item.addEventListener('click', onItemClick);
   span_delete.addEventListener('click', onDeleteClick)
@@ -83,11 +86,10 @@ function onItemClick(event){
 function onDateChanged() {
   console.log("date changed")
   $date.innerHTML = getCurrentSelectedDate()
+  cleanStateItems();
+  cleanSummary();
   getDiaryItems(getCurrentSelectedDate(), function (data) {
-    cleanStateItems();
-    cleanSummary();
     if (data) {
-
       for (let index in data.items) {
         console.log(data.items[index])
         addItemToState(data.items[index].string, data.items[index].id)
@@ -96,7 +98,7 @@ function onDateChanged() {
       console.log("Data not found!")
     }
   },
-    function () { cleanStateItems(); cleanSummary() })
+    function () { })
 }
 
 function onUpdate(event) {
@@ -128,6 +130,17 @@ function onItemsClean(event) {
   $items.innerHTML = ""
 }
 
+function onSettingsClick(event){
+  console.log("settings opened")
+  $main.classList.add("hidden")
+  $settings.classList.remove("hidden")
+}
+
+function onCloseSettingsClick(event){
+  console.log("settings opened")
+  $main.classList.remove("hidden")
+  $settings.classList.add("hidden")
+}
 $container.addEventListener('appinit', onInit)
 $container.addEventListener('item added', onItemAdd)
 $container.addEventListener('on items clean', onItemsClean)
@@ -136,5 +149,7 @@ $container.addEventListener('item deleted', onItemDelete)
 $summary.addEventListener('summary updated', onSummaryUpdate)
 $source.addEventListener('keypress', onNewCommand);
 
+$settingsIcon.addEventListener('click', onSettingsClick)
+$closeSettingsIcon.addEventListener('click', onCloseSettingsClick)
 $dateleft.addEventListener('click', onPreviousDate);
 $dateright.addEventListener('click', onNextDate);
