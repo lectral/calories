@@ -43,7 +43,7 @@
       <h2>Liczenie kalorii, prościej.</h2>
       <h6>Dziennik kalorii rozumiejący język naturalny.</h6>
         <button class="unsupported" id="unsupported">Otwórz na komórce by zainstalować</button>
-        <button class="add-button button-primary">Zainstaluj</button>
+        <button class="add-button button-primary hidden">Zainstaluj</button>
     </div>
     <div class="row">
     
@@ -123,7 +123,6 @@
     let deferredPrompt;
     const addBtn = document.querySelector('.add-button');
     const unsupportedBtn = document.querySelector('#unsupported');
-    addBtn.classList.add("hidden")
     window.addEventListener('beforeinstallprompt', (e) => {
         // Prevent Chrome 67 and earlier from automatically showing the prompt
         e.preventDefault();
