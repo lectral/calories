@@ -37,43 +37,71 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container" >
-  <button class="add-button">Add to home screen</button>
+  <div class="container" id="main">
+    <!-- Date selector section -->
+    <div class="row">
+      <div class="twelve columns header">
+        <button class="datechange" id="date-left">&lt;</button>
+        <span id="date">-</span>
+        <button class="datechange" id="date-right">&gt;</button>
+        <div class="u-pull-right" id="settings-icon">S</div>
+      </div>
+    </div>
+
+    <!-- Food items section -->
+    <div class="row summary section">
+      <div class="twelve columns">
+        <div class="items row" id="items">
+        </div>
+      </div>
+    </div>
+
+    <!-- Commands section -->
+    <div class="row">
+      <div contenteditable="true" class="commands" id="command" autocapitalize="none"></div>
+    </div>
+
+    <!-- Summary section -->
+    <div class="row">
+      <div class="summary" id="summary">^ Kliknij i dodaj jakieś papu</div>
+    </div>
+
+    <div class="overlay row">
+      <div class="row"></div>
+
+    </div>
   </div>
 
-  <!-- Scripts -->
-  <script>
-    let deferredPrompt;
-      const addBtn = document.querySelector('.add-button');
-      addBtn.style.display = 'none';
-      window.addEventListener('beforeinstallprompt', (e) => {
-          // Prevent Chrome 67 and earlier from automatically showing the prompt
-          e.preventDefault();
-          // Stash the event so it can be triggered later.
-          deferredPrompt = e;
-          // Update UI to notify the user they can add to home screen
-          addBtn.style.display = 'block';
+  <div class="container hidden" id="settings">
+    <div class="row">
+      <div class="twelve columns">
+        <div class="u-pull-right" id="close-settings-icon">X</div>
+      </div>
 
-          addBtn.addEventListener('click', (e) => {
-            // hide our user interface that shows our A2HS button
-            addBtn.style.display = 'none';
-            // Show the prompt
-            deferredPrompt.prompt();
-            // Wait for the user to respond to the prompt
-            deferredPrompt.userChoice.then((choiceResult) => {
-              if (choiceResult.outcome === 'accepted') {
-                console.log('User accepted the A2HS prompt');
-              } else {
-                console.log('User dismissed the A2HS prompt');
-              }
-              deferredPrompt = null;
-            });
-          });
-        });
+      <div class="row section">
+        <div class="twelve columns">
+          <label for="calorieLimitInput">Limit kalorii</label>
+          <input class="u-full-width" type="text" placeholder="1800" id="calorieLimitInput">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Service Worker for PWA -->
+  <script>
+    const PATH = '/service-worker.js';
+
+    console.log('Registering service worker...');
+    navigator.serviceWorker.register(PATH).then(function () {
+      console.log("Service worker registered.");
+    }).catch(function (err) {
+      console.log("Service worker registration failed: ", err)
+    });
   </script>
-  <!-- <script src="utils.js"></script>
+
+  <!-- Scripts -->
+  <script src="utils.js"></script>
   <script src="app.js"></script>
-  <script src="events.js"></script> -->
+  <script src="events.js"></script>
   <!-- End of Scripts -->
   <!-- <script src="scripts.js"></script> -->
   <!-- End Document

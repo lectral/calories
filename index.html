@@ -25,6 +25,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/landing.css">
   <link rel="stylesheet" href="css/main.css">
 
   <!-- Favicon
@@ -37,7 +38,18 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container" id="main">
+  <div class="container">
+    <div class="row header-landing">
+      <h2>Liczenie kalorii, prościej.</h2>
+      <h6>Dziennik kalorii rozumiejący język naturalny.</h6>
+        <button class="unsupported" id="unsupported">Open on mobile to install</button>
+        <button class="add-button button-primary">Add to home screen</button>
+    </div>
+    <div class="row">
+    
+    </div>
+    <div class="row">
+  <div class="container app-space" id="main">
     <!-- Date selector section -->
     <div class="row">
       <div class="twelve columns header">
@@ -86,6 +98,8 @@
       </div>
     </div>
   </div>
+  </div>
+  </div>
   <!-- Service Worker for PWA -->
   <script>
     const PATH = '/service-worker.js';
@@ -99,9 +113,43 @@
   </script>
   
   <!-- Scripts -->
+  <script>
+      const $demo = true;
+  </script>
   <script src="utils.js"></script>
   <script src="app.js"></script>
   <script src="events.js"></script>
+  <script>
+    let deferredPrompt;
+    const addBtn = document.querySelector('.add-button');
+    const unsupportedBtn = document.querySelector('#unsupported');
+    addBtn.style.display = 'none';
+    window.addEventListener('beforeinstallprompt', (e) => {
+        // Prevent Chrome 67 and earlier from automatically showing the prompt
+        e.preventDefault();
+        // Stash the event so it can be triggered later.
+        deferredPrompt = e;
+        // Update UI to notify the user they can add to home screen
+        unsupportedBtn.style.display = "none"
+        addBtn.style.display = 'block';
+
+        addBtn.addEventListener('click', (e) => {
+          // hide our user interface that shows our A2HS button
+          addBtn.style.display = 'none';
+          // Show the prompt
+          deferredPrompt.prompt();
+          // Wait for the user to respond to the prompt
+          deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('User accepted the A2HS prompt');
+            } else {
+              console.log('User dismissed the A2HS prompt');
+            }
+            deferredPrompt = null;
+          });
+        });
+      });
+  </script>
   <!-- End of Scripts -->
   <!-- <script src="scripts.js"></script> -->
   <!-- End Document

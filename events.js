@@ -2,6 +2,12 @@ var $deleteTimer
 
 function onInit(event) {
   updateDate(getCurrentSelectedDate())
+  if($demo){
+    if($state['diary']['items'].length === 0){
+      addItemToState("1 jabłko")
+      addItemToState("1/2 szklanki mleka")
+    }
+  }
 }
 
 function onItemDelete(event) {

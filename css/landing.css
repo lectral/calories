@@ -1,0 +1,54 @@
+.unsupported {
+  border-color: red;
+  color: red;
+  pointer-events: none;
+}
+.header-landing {
+  margin-top: 7rem;
+  text-align: center;
+}
+
+.app-space {
+  margin-top: 2rem;
+  max-width: 360px;
+  min-height: 340px;
+  border: solid 1px black;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+@media screen and (max-height: 1000px) {
+  .app-space {
+    min-height: 600px;
+    max-height: 600px;
+  }
+}
+
+@media screen and (max-height: 820px){
+  .app-space {
+    min-height: 500px;
+    max-height: 500px;
+  }
+}
+
+@media screen and (max-height: 750px){
+  .app-space {
+    max-height: 420px;
+    max-height: 420px;
+
+  }
+}
+
+@media screen and (max-height: 700px){
+  .app-space {
+    min-height: 340px;
+    max-height: 420px;
+
+  }
+}
+
+
+
+.add-button { */
+
+}
