@@ -128,8 +128,12 @@ function onSummaryUpdate(event){
     summary.carbs += item.carbs
   }
   console.log(summary)
+  if(summary.total_kcal !== 0){
   $summary.innerHTML = `${summary.total_kcal} kcal, ${summary.protein}
   białko, ${summary.fat} tłuszcze, ${summary.carbs} węgle`
+  }else{
+    $summary.innerHTML = "^ Kliknij i dodaj jakieś papu"
+  }
 }
 
 function onItemsClean(event) {
