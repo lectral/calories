@@ -1,3 +1,7 @@
+.darkmode--activated div{
+  color: #fff;
+}
+
 body{
   font-size: 1.8em;
 }

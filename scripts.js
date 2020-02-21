@@ -1,5 +1,5 @@
 if (!window.indexedDB) {
-  console.log(
+  
     "Your browser doesn't support a stable version of IndexedDB. Such and such feature will not be available."
   );
 }
@@ -49,25 +49,25 @@ function modifyDate(date, modifier) {
 }
 
 function init() {
-  console.log("Initializing app")
+  
   var request = window.indexedDB.open("calories_diar2y", 2);
   request.onerror = function (event) {
-    console.log("Failed to create/open database")
+    
   }
   request.onsuccess = function (event) {
     $database = event.target.result
-    console.log("Database created/opened");
+    
     loadState($state.app.current_date);
   }
   request.onupgradeneeded = function (event) {
-    console.log("request.onupgradeneeded")
+    
     $database = event.target.result
     var objectStore = $database.createObjectStore("diary", {
       keyPath: "date"
     });
     objectStore.createIndex("string", "string")
     objectStore.transaction.oncomplete = function (event) {
-      console.log("Object store created")
+      
     }
   }
 }
@@ -79,14 +79,14 @@ function loadState(date) {
   getDiaryItems(date,
     // on record found
     function (record) {
-      console.log("Data found")
+      
       $state.diary = record
       resetSummary()
       render()
     },
     //on record not found
     function () {
-      console.log("Data not found!")
+      
       $state.diary.items = []
       resetSummary()
       render()
@@ -113,8 +113,8 @@ function render() {
 }
 
 function renderSummary() {
-  console.log("rendering summary")
-  console.log($state.summary)
+  
+  
   $summary.innerHTML = `${$state.summary.total_kcal} kcal, ${$state.summary.protein}
   białko, ${$state.summary.fat} tłuszcze, ${$state.summary.carbs} węgle`
 }
@@ -125,7 +125,7 @@ function getDiaryItems(date, record_found, record_not_found) {
     "diary")
   var request = objectStore.get(date)
   request.onerror = function (event) {
-    console.log("getDiaryItems() - error getting entry")
+    
   };
   request.onsuccess = function (event) {
     var data = event.target.result
@@ -240,7 +240,7 @@ function addEntry(input, entry, item_id) {
     }
   }
   var nutrients = calculateNutrients(input['quantity'], grams, entry['nutrition'])
-  console.log(nutrients)
+  
   updateSummary(nutrients)
   renderSummary()
   div.innerHTML = input['input'] + " - " + nutrients.kcal + " kcal";
@@ -276,7 +276,7 @@ function onDelete(event){
     if (event.target.classList.contains("hold")) {
       event.target.remove()
       var to_remove = parseInt(event.target.id.split("-")[1])
-      console.log("removing" + to_remove)
+      
       removeItemFromDiary(to_remove);
       saveStateToDb();
       resetSummary();
@@ -339,12 +339,12 @@ function saveToState(text) {
 }
 
 function saveStateToDb() {
-  console.log($database)
+  
   var objectStore = $database.transaction("diary", "readwrite").objectStore(
     "diary")
   var request = objectStore.get($state.app.current_date)
   request.onerror = function (event) {
-    console.log("error finding entry. creating entry")
+    
   };
   request.onsuccess = function (event) {
     var data = event.target.result
@@ -353,21 +353,21 @@ function saveStateToDb() {
       data.items = $state.diary.items
       var requestUpdate = objectStore.put(data);
       requestUpdate.onerror = function (event) {
-        console.log("updated")
+        
       };
       requestUpdate.onsuccess = function (event) {
-        console.log("saved")
+        
       };
 
     } else {
-      console.log($state['diary'])
+      
       $state.diary.date = $state.app.current_date
       request_add = objectStore.add($state['diary'])
       request_add.onsuccess = function (event) {
-        console.log("saved")
+        
       }
       request_add.onerror = function (event) {
-        console.log("error adding record")
+        
       }
     }
   }
@@ -386,24 +386,24 @@ $source.addEventListener('keypress', (e) => {
     e.preventDefault();
     var id = saveToState(textContent);
     addFoodItemToList(textContent, id)
-    console.log($state)
+    
     saveStateToDb()
   }
 });
 
 $dateleft.addEventListener('click', (e) => {
-  console.log($state.app.current_date)
+  
   let newDate = modifyDate($state.app.current_date, -1)
   $state.app.current_date = newDate
-  console.log(newDate)
+  
   loadState(newDate)
 });
 
 $dateright.addEventListener('click', (e) => {
-  console.log($state.app.current_date)
+  
   let newDate = modifyDate($state.app.current_date, 1)
   $state.app.current_date = newDate
-  console.log(newDate)
+  
   loadState(newDate)
 });
 

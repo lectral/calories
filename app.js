@@ -1,5 +1,5 @@
 if (!window.indexedDB) {
-  console.log(
+    console.log(
     "Your browser doesn't support a stable version of IndexedDB. Such and such feature will not be available."
   );
 }
@@ -14,6 +14,22 @@ const $settingsIcon = document.querySelector("#settings-icon")
 const $closeSettingsIcon = document.querySelector("#close-settings-icon")
 const $main = document.querySelector("#main")
 const $settings = document.querySelector("#settings")
+const $themeChanger = document.querySelector("#theme-changer")
+var options = {
+  bottom: '64px', // default: '32px'
+  right: 'unset', // default: '32px'
+  left: '32px', // default: 'unset'
+  time: '1s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: true, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: false // default: true
+}
+
+const darkmode = new Darkmode(options);
 var $deleteTimer;
 var $database
 
@@ -35,29 +51,29 @@ var $state = {
 }
 
 function init() {
-  console.log("Initializing app")
+  
   getJSON("https://calories.lectral.now.sh/db.json",function(err, data){
     $db = data
-    console.log(data)
+    
     var request = window.indexedDB.open("calories_diar2y", 2);
     request.onerror = function (event) {
-      console.log("Failed to create/open database")
+      
     }
     request.onsuccess = function (event) {
       $database = event.target.result
-      console.log("Database created/opened");
+      
       //loadState($state.app.current_date);
       $container.dispatchEvent(new CustomEvent('appinit', {}))
     }
     request.onupgradeneeded = function (event) {
-      console.log("request.onupgradeneeded")
+      
       $database = event.target.result
       var objectStore = $database.createObjectStore("diary", {
         keyPath: "date"
       });
       objectStore.createIndex("string", "string")
       objectStore.transaction.oncomplete = function (event) {
-        console.log("Object store created")
+        
       }
     }
   })
@@ -117,7 +133,7 @@ function findFoodItem(item) {
   for (let key in $db['products']) {
     var value = $db['products'][key]
     for (let alias in value['aliases']) {
-      console.log(item.toLowerCase())
+      
       if (value['aliases'][alias].toLowerCase() === item.toLowerCase()) {
         return value
       }
@@ -129,7 +145,7 @@ function findFoodItem(item) {
 
 function parseInput(input) {
   var regex = /. .*/g;
-  console.log(input)
+  
   var string_words = input.split(" ")
  
   var dict = {
@@ -146,14 +162,14 @@ function parseInput(input) {
   }
 
   var quantity = extractQuantity(input)
-  console.log(quantity)
+  
   if(quantity !== false){
     dict.quantity = quantity.quantity
     input = input.replace(quantity.raw, "")
   }
 
   dict['foodItem'] = input.replace(/^\s+|\s+$/g, ''); 
-  console.log(dict)
+  
   return dict
 }
 
@@ -162,10 +178,10 @@ function extractQuantity(string){
   for(let idx in words){
     qwords = quantityWords(words[idx])
     if(!isNaN(words[idx]) && (words[idx] !== "")){
-      console.log("a")
+      
       return {quantity: parseInt(words[idx]), raw: words[idx]}
     }else if(qwords !== -1){
-      console.log("b")
+      
       return { quantity: qwords, raw: words[idx] }
     }
     return false;
@@ -178,7 +194,7 @@ function extractModifier(string){
     for (let kaliases in value['aliases']) {
       var alias_string = value['aliases'][kaliases]
       if ((alias_string !== "") && (string.includes(alias_string+" "))) {
-        console.log("c: " + alias_string + "  " + string)
+        
         return {alias: alias_string, mod : value['id']}
       }
     }
@@ -204,7 +220,7 @@ function getDiaryItems(date, record_found, record_not_found) {
     "diary")
   var request = objectStore.get(date)
   request.onerror = function (event) {
-    console.log("getDiaryItems() - error getting entry")
+    
   };
   request.onsuccess = function (event) {
     var data = event.target.result
@@ -217,12 +233,12 @@ function getDiaryItems(date, record_found, record_not_found) {
 }
 
 function saveStateToDb() {
-  console.log($database)
+  
   var objectStore = $database.transaction("diary", "readwrite").objectStore(
     "diary")
   var request = objectStore.get($state.app.current_date)
   request.onerror = function (event) {
-    console.log("error finding entry. creating entry")
+    
   };
   request.onsuccess = function (event) {
     var data = event.target.result
@@ -231,21 +247,21 @@ function saveStateToDb() {
       data.items = $state.diary.items
       var requestUpdate = objectStore.put(data);
       requestUpdate.onerror = function (event) {
-        console.log("updated")
+        
       };
       requestUpdate.onsuccess = function (event) {
-        console.log("saved")
+        
       };
 
     } else {
-      console.log($state['diary'])
+      
       $state.diary.date = $state.app.current_date
       request_add = objectStore.add($state['diary'])
       request_add.onsuccess = function (event) {
-        console.log("saved")
+        
       }
       request_add.onerror = function (event) {
-        console.log("error adding record")
+        
       }
     }
   }
@@ -255,7 +271,7 @@ function saveStateToDb() {
 function addItemToState(item_string, item_id){
   var new_id
   if(!item_id){
-    console.log("no item id")
+    
     new_id = $state['diary']['max_id'] + 1
     $state['diary']['max_id'] = new_id
   }else{
@@ -278,9 +294,9 @@ function addItemToState(item_string, item_id){
 }
 
 function removeItemFromState(id) {
-  console.log("removing.."+id)
+  
   $state.diary.items = $state.diary.items.filter(function (obj) {
-    console.log(obj.id)
+    
     return obj.id !== id;
   });
   $container.dispatchEvent(new CustomEvent('item deleted',{detail : {id : id}}))
@@ -307,7 +323,7 @@ function addToSummary(id, data) {
     "nutrients" : data
   }
   $state.summary2.push(data)
-  console.log($state)
+  
   $summary.dispatchEvent(new CustomEvent("summary updated", {}))
 }
 
@@ -318,10 +334,10 @@ function cleanSummary(){
 
 function removeFromSummary(id) {
   $state.summary2 = $state.summary2.filter(function (obj) {
-    console.log("summary"+obj.id)
+    
     return obj.id !== id;
   });
-  console.log("removing done")
+  
   $summary.dispatchEvent(new CustomEvent('summary updated', { detail: { id: id } }))
 }
 

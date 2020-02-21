@@ -1,3 +1,11 @@
+
+.darkmode--activated div{
+  color: #fff;
+}
+
+.darkmode--activated .app-space{
+  border:1px solid white;
+}
 .unsupported {
   border-color: red;
   font-color: red;

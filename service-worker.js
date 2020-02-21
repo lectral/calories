@@ -23,7 +23,7 @@ self.addEventListener('install', function (evt) {
 
 self.addEventListener('fetch', function (evt) {
     // Snooze logs...
-    // console.log(event.request.url);
+    // 
     evt.respondWith(
         // Firstly, send request..
         fetch(evt.request).catch(function () {
