@@ -1,102 +1,1583 @@
 {
+  "products": [
+    {
+      "name": "jajko",
+      "nutrition": {
+        "carbs": 0.72,
+        "fat": 9.51,
+        "kcal": 143.0,
+        "protein": 12.56
+      },
+      "aliases": [
+        "jajka",
+        "jajko",
+        "jajo",
+        "jajek",
+        "jaja",
+        "\ud83e\udd5a"
+      ],
+      "id": "1",
+      "mods": {
+        "unit": "56"
+      }
+    },
+    {
+      "name": "cukier",
+      "nutrition": {
+        "carbs": 100.0,
+        "fat": 0.0,
+        "kcal": 405.0,
+        "protein": 0.0
+      },
+      "aliases": [
+        "cukru",
+        "cukrowi",
+        "cukrem",
+        "cukru"
+      ],
+      "id": "2",
+      "mods": {
+        "spoon": "12",
+        "teaspoon": "6",
+        "unit": "56",
+        "glass": "200"
+      }
+    },
+    {
+      "name": "jab\u0142ko",
+      "nutrition": {
+        "carbs": 10.1,
+        "fat": 0.4,
+        "kcal": 50.0,
+        "protein": 0.4
+      },
+      "aliases": [
+        "jab\u0142ko",
+        "jab\u0142ek",
+        "jab\u0142ka",
+        "japka",
+        "japko",
+        "\ud83c\udf4e",
+        "\ud83c\udf4f"
+      ],
+      "id": "3",
+      "mods": {
+        "unit": "50"
+      }
+    },
+    {
+      "name": "placek tortilla",
+      "nutrition": {
+        "carbs": 50.4,
+        "fat": 5.4,
+        "kcal": 319.0,
+        "protein": 9.7
+      },
+      "aliases": [
+        "tortilli",
+        "tortilla",
+        "tortille",
+        "wrap"
+      ],
+      "id": "4",
+      "mods": {
+        "unit": "62",
+        "wrap": "62"
+      }
+    },
+    {
+      "name": "mozzarela",
+      "nutrition": {
+        "carbs": 3.0,
+        "fat": 16.0,
+        "kcal": 254.0,
+        "protein": 24.0
+      },
+      "aliases": [
+        "mozzarelli",
+        "mozzarela",
+        "mozzarelle"
+      ],
+      "id": "5",
+      "mods": {
+        "ball": "125",
+        "unit": "60"
+      }
+    },
+    {
+      "name": "pomidor",
+      "nutrition": {
+        "carbs": 2.9,
+        "fat": 0.2,
+        "kcal": 19.0,
+        "protein": 0.9
+      },
+      "aliases": [
+        "pomidor",
+        "pomidora",
+        "pomidory",
+        "\ud83c\udf45"
+      ],
+      "id": "6",
+      "mods": {
+        "unit": "170"
+      }
+    },
+    {
+      "name": "pesto",
+      "nutrition": {
+        "carbs": 6.3,
+        "fat": 34.6,
+        "kcal": 340.0,
+        "protein": 3.7
+      },
+      "aliases": [
+        "pesto",
+        "pesta"
+      ],
+      "id": "7",
+      "mods": {
+        "spoon": "20",
+        "teaspoon": "10",
+        "unit": "340"
+      }
+    },
+    {
+      "name": "pier\u015b z kurczaka",
+      "nutrition": {
+        "carbs": 0.0,
+        "fat": 1.3,
+        "kcal": 98.0,
+        "protein": 21.5
+      },
+      "aliases": [
+        "piersi",
+        "piersi z kurczaka"
+      ],
+      "id": "8",
+      "mods": {
+        "unit": "200"
+      }
+    },
+    {
+      "name": "coca-cola",
+      "nutrition": {
+        "carbs": 10.6,
+        "fat": 0.0,
+        "kcal": 42.0,
+        "protein": 0.0
+      },
+      "aliases": [
+        "cola",
+        "pepsi",
+        "kola",
+        "koli",
+        "coli"
+      ],
+      "id": "9",
+      "mods": {
+        "can": "330",
+        "glass": "250",
+        "unit": "330",
+        "ml": "1"
+      }
+    },
+    {
+      "name": "mars",
+      "nutrition": {
+        "carbs": 70.3,
+        "fat": 17.0,
+        "kcal": 452.0,
+        "protein": 3.7
+      },
+      "aliases": [
+        "mars",
+        "mars\u00f3w",
+        "marsy",
+        "marsa"
+      ],
+      "id": "10",
+      "mods": {
+        "bar": "47",
+        "unit": "47"
+      }
+    },
+    {
+      "name": "snickers",
+      "nutrition": {
+        "carbs": 60.7,
+        "fat": 22.6,
+        "kcal": 483.0,
+        "protein": 8.6
+      },
+      "aliases": [
+        "snickers",
+        "snikers",
+        "snickersa",
+        "snikersa",
+        "snickersow",
+        "snikersow"
+      ],
+      "id": "11",
+      "mods": {
+        "bar": "51",
+        "unit": "51"
+      }
+    },
+    {
+      "name": "olej rzepakowy",
+      "nutrition": {
+        "carbs": 0.0,
+        "fat": 100.0,
+        "kcal": 884.0,
+        "protein": 0.0
+      },
+      "aliases": [
+        "oleju rzepakowego",
+        "olej rzepakowy",
+        "oleju"
+      ],
+      "id": "12",
+      "mods": {
+        "spoon": "10",
+        "teaspoon": "5",
+        "unit": "10"
+      }
+    },
+    {
+      "name": "cheddar\n",
+      "nutrition": {
+        "carbs": 0.0,
+        "fat": 26.0,
+        "kcal": 334.0,
+        "protein": 25.0
+      },
+      "aliases": [
+        "ser cheddar",
+        "sera cheddara",
+        "cheddar",
+        "cheddara"
+      ],
+      "id": "13",
+      "mods": {
+        "unit": "20",
+        "slice": "20"
+      }
+    },
+    {
+      "name": "jogurt grecki",
+      "nutrition": {
+        "carbs": 5.1,
+        "fat": 9.0,
+        "kcal": 117.0,
+        "protein": 3.8
+      },
+      "aliases": [
+        "jogurt grecki",
+        "jogurtu greckiego",
+        "greckiego"
+      ],
+      "id": "14",
+      "mods": {
+        "spoon": "20",
+        "teaspoon": "10",
+        "unit": "150"
+      }
+    },
+    {
+      "name": "mleko 3.2%",
+      "nutrition": {
+        "carbs": 4.8,
+        "fat": 3.2,
+        "kcal": 61.0,
+        "protein": 3.2
+      },
+      "aliases": [
+        "mleka",
+        "mleko"
+      ],
+      "id": "15",
+      "mods": {
+        "spoon": "12",
+        "teaspoon": "6",
+        "unit": "240",
+        "glass": "240",
+        "ml": "1"
+      }
+    },
+    {
+      "name": "chleb tostowy",
+      "nutrition": {
+        "carbs": 47.6,
+        "fat": 1.6,
+        "kcal": 247.0,
+        "protein": 8.0
+      },
+      "aliases": [
+        "chleb tostowy",
+        "tosta",
+        "chleba tostowego",
+        "tost"
+      ],
+      "id": "16",
+      "mods": {
+        "unit": "45",
+        "slice": "23"
+      }
+    },
+    {
+      "name": "ketchup",
+      "nutrition": {
+        "carbs": 26.0,
+        "fat": 0.2,
+        "kcal": 116.0,
+        "protein": 1.3
+      },
+      "aliases": [
+        "ketchup",
+        "ketchupu",
+        "keczup",
+        "keczupu",
+        "keczupy",
+        "ketchupu"
+      ],
+      "id": "17",
+      "mods": {
+        "spoon": "12",
+        "teaspoon": "6",
+        "unit": "10"
+      }
+    },
+    {
+      "name": "majonez",
+      "nutrition": {
+        "carbs": 3.1,
+        "fat": 71.8,
+        "kcal": 663.0,
+        "protein": 1.0
+      },
+      "aliases": [
+        "majonezu",
+        "majonez"
+      ],
+      "id": "18",
+      "mods": {
+        "spoon": "25",
+        "teaspoon": "13",
+        "unit": "25"
+      }
+    },
+    {
+      "name": "mcflurry lion czekoladowy",
+      "nutrition": {
+        "carbs": 27.0,
+        "fat": 5.4,
+        "kcal": 176.0,
+        "protein": 3.5
+      },
+      "aliases": [
+        "mcflurry lion czekoladowy",
+        "mcflurry lion czekoladowe"
+      ],
+      "id": "19",
+      "mods": {
+        "unit": "160"
+      }
+    },
+    {
+      "name": "mcchicken",
+      "nutrition": {
+        "carbs": 21.6,
+        "fat": 9.5,
+        "kcal": 221.0,
+        "protein": 12.1
+      },
+      "aliases": [
+        "mcchicken"
+      ],
+      "id": "20",
+      "mods": {
+        "unit": "190"
+      }
+    },
+    {
+      "name": "frytki",
+      "nutrition": {
+        "carbs": 41.7,
+        "fat": 17.4,
+        "kcal": 331.0,
+        "protein": 3.5
+      },
+      "aliases": [
+        "frytki",
+        "frytk\u00f3w",
+        "frytek",
+        "frytkow"
+      ],
+      "id": "21",
+      "mods": {
+        "unit": "5",
+        "bowl": "200"
+      }
+    },
+    {
+      "name": "mi\u00f3d",
+      "nutrition": {
+        "carbs": 79.5,
+        "fat": 0.0,
+        "kcal": 324.0,
+        "protein": 0.3
+      },
+      "aliases": [
+        "mi\u00f3d",
+        "miodu"
+      ],
+      "id": "22",
+      "mods": {
+        "spoon": "25",
+        "teaspoon": "12",
+        "unit": "12",
+        "glass": "320"
+      }
+    },
+    {
+      "name": "kukurydza konserwowa",
+      "nutrition": {
+        "carbs": 19.7,
+        "fat": 1.2,
+        "kcal": 109.0,
+        "protein": 2.9
+      },
+      "aliases": [
+        "kukurydza",
+        "kukurydzy",
+        "kukurydzy konserwowej"
+      ],
+      "id": "23",
+      "mods": {
+        "spoon": "15",
+        "can": "285",
+        "teaspoon": "8",
+        "unit": "100",
+        "glass": "170"
+      }
+    },
+    {
+      "name": "chleb zwyk\u0142y",
+      "nutrition": {
+        "carbs": 47.0,
+        "fat": 1.2,
+        "kcal": 227.0,
+        "protein": 6.8
+      },
+      "aliases": [
+        "chleb",
+        "chleba",
+        "bochenki chleba",
+        "bochenek chleba"
+      ],
+      "id": "24",
+      "mods": {
+        "unit": "600",
+        "slice": "30"
+      }
+    },
+    {
+      "name": "p\u0105czek",
+      "nutrition": {
+        "carbs": 62.1,
+        "fat": 15.5,
+        "kcal": 415.0,
+        "protein": 7.6
+      },
+      "aliases": [
+        "paczki",
+        "p\u0105czki",
+        "p\u0105czk\u00f3w",
+        "paczkow"
+      ],
+      "id": "25",
+      "mods": {
+        "unit": "70"
+      }
+    },
+    {
+      "name": "pomara\u0144cza\n",
+      "nutrition": {
+        "carbs": 12.0,
+        "fat": 0.1,
+        "kcal": 47.0,
+        "protein": 0.9
+      },
+      "aliases": [
+        "pomara\u0144czy",
+        "pomara\u0144cza",
+        "pomarancza",
+        "pomaranczy",
+        "\ud83c\udf4a",
+        "orange"
+      ],
+      "id": "26",
+      "mods": {
+        "unit": "250"
+      }
+    },
+    {
+      "name": "agrest",
+      "nutrition": {
+        "carbs": 11.8,
+        "fat": 0.9,
+        "kcal": 60.0,
+        "protein": 1.2
+      },
+      "aliases": [
+        "agrest",
+        "agresty",
+        "agrest\u00f3w"
+      ],
+      "id": "27",
+      "mods": {
+        "unit": "5"
+      }
+    },
+    {
+      "name": "ananas",
+      "nutrition": {
+        "carbs": 7.8,
+        "fat": 0.0,
+        "kcal": 33.0,
+        "protein": 0.2
+      },
+      "aliases": [
+        "ananas",
+        "ananasu",
+        "ananasem",
+        "ananasa"
+      ],
+      "id": "28",
+      "mods": {
+        "unit": "50"
+      }
+    },
+    {
+      "name": "arbuz",
+      "nutrition": {
+        "carbs": 3.2,
+        "fat": 0.1,
+        "kcal": 15.0,
+        "protein": 0.3
+      },
+      "aliases": [
+        "arbuz",
+        "arbuza",
+        "arbuzem",
+        "arbuzu"
+      ],
+      "id": "29",
+      "mods": {
+        "unit": "2000",
+        "piece": "350"
+      }
+    },
+    {
+      "name": "awokado",
+      "nutrition": {
+        "carbs": 7.0,
+        "fat": 15.0,
+        "kcal": 160.0,
+        "protein": 2.0
+      },
+      "aliases": [
+        "awokado",
+        "awokadem"
+      ],
+      "id": "30",
+      "mods": {
+        "unit": "135"
+      }
+    },
+    {
+      "name": "bak\u0142a\u017can",
+      "nutrition": {
+        "carbs": 6.3,
+        "fat": 0.1,
+        "kcal": 26.0,
+        "protein": 1.1
+      },
+      "aliases": [
+        "bak\u0142a\u017can",
+        "bak\u0142a\u017cana",
+        "bak\u0142a\u017canem",
+        "baklazanem",
+        "baklazanu",
+        "baklazanem",
+        "bak\u0142a\u017canu",
+        "baklazanu"
+      ],
+      "id": "31",
+      "mods": {
+        "unit": "245"
+      }
+    },
+    {
+      "name": "banan",
+      "nutrition": {
+        "carbs": 17.0,
+        "fat": 0.3,
+        "kcal": 74.0,
+        "protein": 0.9
+      },
+      "aliases": [
+        "banan",
+        "banana"
+      ],
+      "id": "32",
+      "mods": {
+        "unit": "120"
+      }
+    },
+    {
+      "name": "banan suszony",
+      "nutrition": {
+        "carbs": 88.8,
+        "fat": 1.1,
+        "kcal": 360.0,
+        "protein": 3.8
+      },
+      "aliases": [
+        "banana suszonego",
+        "banan suszony"
+      ],
+      "id": "33",
+      "mods": {
+        "handful": "30",
+        "unit": "30",
+        "piece": "5"
+      }
+    },
+    {
+      "name": "bigos",
+      "nutrition": {
+        "carbs": 3.8,
+        "fat": 9.8,
+        "kcal": 126.0,
+        "protein": 5.6
+      },
+      "aliases": [
+        "bigos",
+        "bigosu"
+      ],
+      "id": "34",
+      "mods": {
+        "spoon": "12",
+        "teaspoon": "6",
+        "unit": "250",
+        "glass": "200",
+        "bowl": "250"
+      }
+    },
+    {
+      "name": "bo\u0107wina",
+      "nutrition": {
+        "carbs": 5.5,
+        "fat": 0.5,
+        "kcal": 35.0,
+        "protein": 2.1
+      },
+      "aliases": [
+        "bo\u0107wina"
+      ],
+      "id": "35",
+      "mods": {}
+    },
+    {
+      "name": "borowik \u015bwie\u017cy, prawdziwek",
+      "nutrition": {
+        "carbs": 2.7,
+        "fat": 0.4,
+        "kcal": 36.0,
+        "protein": 5.4
+      },
+      "aliases": [
+        "borowik \u015bwie\u017cy",
+        "prawdziwek"
+      ],
+      "id": "36",
+      "mods": {}
+    },
+    {
+      "name": "bor\u00f3wki",
+      "nutrition": {
+        "carbs": 12.7,
+        "fat": 0.2,
+        "kcal": 49.0,
+        "protein": 0.4
+      },
+      "aliases": [
+        "bor\u00f3wki"
+      ],
+      "id": "37",
+      "mods": {}
+    },
+    {
+      "name": "bor\u00f3wki ameryka\u0144skie",
+      "nutrition": {
+        "carbs": 14.5,
+        "fat": 0.4,
+        "kcal": 58.0,
+        "protein": 0.7
+      },
+      "aliases": [
+        "bor\u00f3wki ameryka\u0144skie"
+      ],
+      "id": "38",
+      "mods": {}
+    },
+    {
+      "name": "bounty, baton",
+      "nutrition": {
+        "carbs": 56.7,
+        "fat": 25.2,
+        "kcal": 470.0,
+        "protein": 4.2
+      },
+      "aliases": [
+        "bounty",
+        "baton"
+      ],
+      "id": "39",
+      "mods": {}
+    },
+    {
+      "name": "broku\u0142y",
+      "nutrition": {
+        "carbs": 5.5,
+        "fat": 0.2,
+        "kcal": 37.0,
+        "protein": 3.3
+      },
+      "aliases": [
+        "broku\u0142y"
+      ],
+      "id": "40",
+      "mods": {}
+    },
+    {
+      "name": "brukselka",
+      "nutrition": {
+        "carbs": 8.7,
+        "fat": 0.5,
+        "kcal": 58.0,
+        "protein": 4.7
+      },
+      "aliases": [
+        "brukselka"
+      ],
+      "id": "41",
+      "mods": {
+        "unit": "85"
+      }
+    },
+    {
+      "name": "brzoskwinia",
+      "nutrition": {
+        "carbs": 11.9,
+        "fat": 0.7,
+        "kcal": 59.0,
+        "protein": 1.3
+      },
+      "aliases": [
+        "brzoskwinia"
+      ],
+      "id": "42",
+      "mods": {}
+    },
+    {
+      "name": "brzoskwinia suszona",
+      "nutrition": {
+        "carbs": 63.3,
+        "fat": 1.6,
+        "kcal": 288.0,
+        "protein": 5.0
+      },
+      "aliases": [
+        "brzoskwinia suszona"
+      ],
+      "id": "43",
+      "mods": {}
+    },
+    {
+      "name": "bu\u0142ka bagietka francuska",
+      "nutrition": {
+        "carbs": 60.1,
+        "fat": 1.7,
+        "kcal": 287.0,
+        "protein": 7.9
+      },
+      "aliases": [
+        "bu\u0142ka bagietka francuska"
+      ],
+      "id": "44",
+      "mods": {}
+    },
+    {
+      "name": "bu\u0142ka grahamka",
+      "nutrition": {
+        "carbs": 40.0,
+        "fat": 1.3,
+        "kcal": 198.0,
+        "protein": 6.5
+      },
+      "aliases": [
+        "bu\u0142ka grahamka"
+      ],
+      "id": "45",
+      "mods": {}
+    },
+    {
+      "name": "bu\u0142ka kajzerka",
+      "nutrition": {
+        "carbs": 44.8,
+        "fat": 2.6,
+        "kcal": 226.0,
+        "protein": 5.8
+      },
+      "aliases": [
+        "bu\u0142ka kajzerka"
+      ],
+      "id": "46",
+      "mods": {}
+    },
+    {
+      "name": "bu\u0142ka ma\u015blana",
+      "nutrition": {
+        "carbs": 47.0,
+        "fat": 4.5,
+        "kcal": 252.0,
+        "protein": 5.9
+      },
+      "aliases": [
+        "bu\u0142ka ma\u015blana"
+      ],
+      "id": "47",
+      "mods": {}
+    },
+    {
+      "name": "buraki",
+      "nutrition": {
+        "carbs": 9.8,
+        "fat": 0.1,
+        "kcal": 46.0,
+        "protein": 1.8
+      },
+      "aliases": [
+        "buraki",
+        "burak",
+        "burak\u00f3w",
+        "borakow"
+      ],
+      "id": "48",
+      "mods": {
+        "unit": "140"
+      }
+    },
+    {
+      "name": "cebula",
+      "nutrition": {
+        "carbs": 6.9,
+        "fat": 0.4,
+        "kcal": 37.0,
+        "protein": 1.4
+      },
+      "aliases": [
+        "cebula"
+      ],
+      "id": "49",
+      "mods": {
+        "unit": "180"
+      }
+    },
+    {
+      "name": "cha\u0142ka",
+      "nutrition": {
+        "carbs": 61.6,
+        "fat": 7.0,
+        "kcal": 331.0,
+        "protein": 7.0
+      },
+      "aliases": [
+        "cha\u0142ka"
+      ],
+      "id": "50",
+      "mods": {}
+    },
+    {
+      "name": "corn flakes, p\u0142atki kukurydziane",
+      "nutrition": {
+        "carbs": 83.6,
+        "fat": 2.5,
+        "kcal": 385.0,
+        "protein": 6.9
+      },
+      "aliases": [
+        "corn flakes"
+      ],
+      "id": "51",
+      "mods": {}
+    },
+    {
+      "name": "cukinia",
+      "nutrition": {
+        "carbs": 3.0,
+        "fat": 0.2,
+        "kcal": 18.0,
+        "protein": 1.0
+      },
+      "aliases": [
+        "cukinia"
+      ],
+      "id": "52",
+      "mods": {
+        "unit": "600"
+      }
+    },
+    {
+      "name": "cykoria",
+      "nutrition": {
+        "carbs": 4.1,
+        "fat": 0.2,
+        "kcal": 25.0,
+        "protein": 1.7
+      },
+      "aliases": [
+        "cykoria"
+      ],
+      "id": "53",
+      "mods": {}
+    },
+    {
+      "name": "cytryna",
+      "nutrition": {
+        "carbs": 9.5,
+        "fat": 0.5,
+        "kcal": 46.0,
+        "protein": 0.8
+      },
+      "aliases": [
+        "cytryna"
+      ],
+      "id": "54",
+      "mods": {
+        "unit": "70"
+      }
+    },
+    {
+      "name": "czarne jagody",
+      "nutrition": {
+        "carbs": 12.2,
+        "fat": 0.9,
+        "kcal": 61.0,
+        "protein": 1.1
+      },
+      "aliases": [
+        "czarne jagody"
+      ],
+      "id": "55",
+      "mods": {}
+    },
+    {
+      "name": "czekolada mleczna",
+      "nutrition": {
+        "carbs": 54.2,
+        "fat": 30.7,
+        "kcal": 526.0,
+        "protein": 8.0
+      },
+      "aliases": [
+        "czekolada mleczna",
+        "czekolady mlecznej",
+        "czekolady",
+        "czekolada"
+      ],
+      "id": "56",
+      "mods": {
+        "bar": "100",
+        "unit": "100",
+        "piece": "6"
+      }
+    },
+    {
+      "name": "czosnek",
+      "nutrition": {
+        "carbs": 28.8,
+        "fat": 0.5,
+        "kcal": 144.0,
+        "protein": 6.2
+      },
+      "aliases": [
+        "czosnek"
+      ],
+      "id": "57",
+      "mods": {}
+    },
+    {
+      "name": "faworki",
+      "nutrition": {
+        "carbs": 25.1,
+        "fat": 52.1,
+        "kcal": 589.0,
+        "protein": 4.8
+      },
+      "aliases": [
+        "faworki"
+      ],
+      "id": "58",
+      "mods": {}
+    },
+    {
+      "name": "granat",
+      "nutrition": {
+        "carbs": 13.2,
+        "fat": 0.4,
+        "kcal": 65.0,
+        "protein": 2.4
+      },
+      "aliases": [
+        "granat"
+      ],
+      "id": "59",
+      "mods": {
+        "unit": "100"
+      }
+    },
+    {
+      "name": "grejpfrut",
+      "nutrition": {
+        "carbs": 9.8,
+        "fat": 0.2,
+        "kcal": 43.0,
+        "protein": 0.6
+      },
+      "aliases": [
+        "grejpfrut"
+      ],
+      "id": "60",
+      "mods": {
+        "unit": "250"
+      }
+    },
+    {
+      "name": "groch, suche ziarno",
+      "nutrition": {
+        "carbs": 60.2,
+        "fat": 1.4,
+        "kcal": 349.0,
+        "protein": 23.8
+      },
+      "aliases": [
+        "groch",
+        "suche ziarno"
+      ],
+      "id": "61",
+      "mods": {}
+    },
+    {
+      "name": "gruszka",
+      "nutrition": {
+        "carbs": 14.4,
+        "fat": 0.2,
+        "kcal": 62.0,
+        "protein": 0.6
+      },
+      "aliases": [
+        "gruszka"
+      ],
+      "id": "62",
+      "mods": {
+        "unit": "130"
+      }
+    },
+    {
+      "name": "jajecznica",
+      "nutrition": {
+        "carbs": 0.8,
+        "fat": 9.7,
+        "kcal": 131.0,
+        "protein": 10.0
+      },
+      "aliases": [
+        "jajecznica"
+      ],
+      "id": "63",
+      "mods": {
+        "unit": "150",
+        "bowl": "220"
+      }
+    },
+    {
+      "name": "kaszanka",
+      "nutrition": {
+        "carbs": 14.5,
+        "fat": 19.5,
+        "kcal": 274.0,
+        "protein": 9.0
+      },
+      "aliases": [
+        "kaszanka"
+      ],
+      "id": "64",
+      "mods": {}
+    },
+    {
+      "name": "kisiel",
+      "nutrition": {
+        "carbs": 25.3,
+        "fat": 0.1,
+        "kcal": 103.0,
+        "protein": 0.3
+      },
+      "aliases": [
+        "kisiel"
+      ],
+      "id": "65",
+      "mods": {}
+    },
+    {
+      "name": "kiwi",
+      "nutrition": {
+        "carbs": 13.9,
+        "fat": 0.5,
+        "kcal": 64.0,
+        "protein": 0.9
+      },
+      "aliases": [
+        "kiwi"
+      ],
+      "id": "66",
+      "mods": {
+        "unit": "70"
+      }
+    },
+    {
+      "name": "kotlet mielony",
+      "nutrition": {
+        "carbs": 21.1,
+        "fat": 11.8,
+        "kcal": 284.0,
+        "protein": 13.0
+      },
+      "aliases": [
+        "kotlet mielony"
+      ],
+      "id": "67",
+      "mods": {}
+    },
+    {
+      "name": "kotlet schabowy panierowany",
+      "nutrition": {
+        "carbs": 15.9,
+        "fat": 24.1,
+        "kcal": 357.0,
+        "protein": 19.0
+      },
+      "aliases": [
+        "kotlet schabowy"
+      ],
+      "id": "68",
+      "mods": {}
+    },
+    {
+      "name": "leczo",
+      "nutrition": {
+        "carbs": 5.5,
+        "fat": 4.4,
+        "kcal": 60.0,
+        "protein": 1.2
+      },
+      "aliases": [
+        "leczo"
+      ],
+      "id": "69",
+      "mods": {}
+    },
+    {
+      "name": "makaron dwujajeczny",
+      "nutrition": {
+        "carbs": 77.4,
+        "fat": 2.6,
+        "kcal": 384.0,
+        "protein": 11.5
+      },
+      "aliases": [
+        "makaron dwujajeczny"
+      ],
+      "id": "70",
+      "mods": {}
+    },
+    {
+      "name": "mandarynka",
+      "nutrition": {
+        "carbs": 7.5,
+        "fat": 0.2,
+        "kcal": 34.0,
+        "protein": 0.5
+      },
+      "aliases": [
+        "mandarynka"
+      ],
+      "id": "71",
+      "mods": {}
+    },
+    {
+      "name": "m\u0105ka ziemniaczana",
+      "nutrition": {
+        "carbs": 83.9,
+        "fat": 0.1,
+        "kcal": 339.0,
+        "protein": 0.6
+      },
+      "aliases": [
+        "m\u0105ka ziemniaczana"
+      ],
+      "id": "72",
+      "mods": {}
+    },
+    {
+      "name": "milky way, baton",
+      "nutrition": {
+        "carbs": 71.8,
+        "fat": 16.2,
+        "kcal": 447.0,
+        "protein": 3.6
+      },
+      "aliases": [
+        "milky way",
+        "baton"
+      ],
+      "id": "73",
+      "mods": {}
+    },
+    {
+      "name": "morele suszone",
+      "nutrition": {
+        "carbs": 72.2,
+        "fat": 1.2,
+        "kcal": 321.0,
+        "protein": 5.4
+      },
+      "aliases": [
+        "morele suszone"
+      ],
+      "id": "74",
+      "mods": {}
+    },
+    {
+      "name": "muesli, musli",
+      "nutrition": {
+        "carbs": 68.1,
+        "fat": 6.8,
+        "kcal": 370.0,
+        "protein": 9.1
+      },
+      "aliases": [
+        "muesli",
+        "musli"
+      ],
+      "id": "75",
+      "mods": {}
+    },
+    {
+      "name": "musztarda",
+      "nutrition": {
+        "carbs": 22.0,
+        "fat": 6.4,
+        "kcal": 168.0,
+        "protein": 5.7
+      },
+      "aliases": [
+        "musztarda"
+      ],
+      "id": "76",
+      "mods": {}
+    },
+    {
+      "name": "nale\u015bniki",
+      "nutrition": {
+        "carbs": 35.7,
+        "fat": 5.5,
+        "kcal": 222.0,
+        "protein": 6.5
+      },
+      "aliases": [
+        "nale\u015bniki"
+      ],
+      "id": "77",
+      "mods": {
+        "unit": "85"
+      }
+    },
+    {
+      "name": "og\u00f3rek",
+      "nutrition": {
+        "carbs": 2.9,
+        "fat": 0.1,
+        "kcal": 15.0,
+        "protein": 0.7
+      },
+      "aliases": [
+        "og\u00f3rek"
+      ],
+      "id": "78",
+      "mods": {
+        "unit": "180"
+      }
+    },
+    {
+      "name": "og\u00f3rek kiszony",
+      "nutrition": {
+        "carbs": 1.9,
+        "fat": 0.2,
+        "kcal": 12.0,
+        "protein": 0.7
+      },
+      "aliases": [
+        "og\u00f3rek kiszony"
+      ],
+      "id": "79",
+      "mods": {
+        "unit": "60"
+      }
+    },
+    {
+      "name": "oliwki",
+      "nutrition": {
+        "carbs": 4.1,
+        "fat": 13.9,
+        "kcal": 147.0,
+        "protein": 1.4
+      },
+      "aliases": [
+        "oliwki"
+      ],
+      "id": "80",
+      "mods": {
+        "unit": "4"
+      }
+    },
+    {
+      "name": "paluszki s\u0142one",
+      "nutrition": {
+        "carbs": 75.2,
+        "fat": 4.9,
+        "kcal": 384.0,
+        "protein": 9.9
+      },
+      "aliases": [
+        "paluszki s\u0142one"
+      ],
+      "id": "81",
+      "mods": {}
+    },
+    {
+      "name": "par\u00f3wki popularne",
+      "nutrition": {
+        "carbs": 0.7,
+        "fat": 34.3,
+        "kcal": 347.0,
+        "protein": 9.5
+      },
+      "aliases": [
+        "par\u00f3wki popularne"
+      ],
+      "id": "82",
+      "mods": {}
+    },
+    {
+      "name": "placki ziemniaczane",
+      "nutrition": {
+        "carbs": 23.9,
+        "fat": 14.6,
+        "kcal": 239.0,
+        "protein": 3.6
+      },
+      "aliases": [
+        "placki ziemniaczane"
+      ],
+      "id": "83",
+      "mods": {}
+    },
+    {
+      "name": "ser twarogowy chudy",
+      "nutrition": {
+        "carbs": 3.5,
+        "fat": 0.5,
+        "kcal": 98.0,
+        "protein": 19.8
+      },
+      "aliases": [
+        "ser twarogowy chudy"
+      ],
+      "id": "84",
+      "mods": {}
+    },
+    {
+      "name": "ser twarogowy p\u00f3\u0142t\u0142usty",
+      "nutrition": {
+        "carbs": 3.7,
+        "fat": 4.7,
+        "kcal": 132.0,
+        "protein": 18.7
+      },
+      "aliases": [
+        "ser twarogowy p\u00f3\u0142t\u0142usty"
+      ],
+      "id": "85",
+      "mods": {}
+    },
+    {
+      "name": "ser twarogowy t\u0142usty",
+      "nutrition": {
+        "carbs": 3.5,
+        "fat": 10.1,
+        "kcal": 176.0,
+        "protein": 17.7
+      },
+      "aliases": [
+        "ser twarogowy t\u0142usty"
+      ],
+      "id": "86",
+      "mods": {}
+    },
+    {
+      "name": "truskawki",
+      "nutrition": {
+        "carbs": 7.2,
+        "fat": 0.5,
+        "kcal": 36.0,
+        "protein": 0.7
+      },
+      "aliases": [
+        "truskawki"
+      ],
+      "id": "87",
+      "mods": {
+        "unit": "10"
+      }
+    },
+    {
+      "name": "twix, baton",
+      "nutrition": {
+        "carbs": 64.2,
+        "fat": 23.2,
+        "kcal": 487.0,
+        "protein": 5.3
+      },
+      "aliases": [
+        "twix",
+        "twixy"
+      ],
+      "id": "88",
+      "mods": {}
+    }
+  ],
   "mods": [
     {
       "aliases": [
-        "gram",
-        "gram\u00f3w",
         "g",
-        "gramy"
+        "gramy",
+        "gram\u00f3w",
+        "gram"
       ],
       "id": "gram"
     },
     {
       "aliases": [
-        "\u0142y\u017ceczka",
+        "\u0142y\u017ceczki",
+        "lyzeczka",
         "lyzeczek",
         "lyzeczki",
         "\u0142y\u017ceczek",
-        "\u0142y\u017ceczki",
-        "lyzeczka"
+        "\u0142y\u017ceczka"
       ],
       "id": "teaspoon"
     },
     {
       "aliases": [
-        "\u0142y\u017cka",
+        "\u0142y\u017cek",
+        "lyzka",
         "lyzki",
         "lyzek",
         "\u0142y\u017cki",
-        "\u0142y\u017cek",
-        "lyzka"
+        "\u0142y\u017cka"
       ],
       "id": "spoon"
     },
     {
       "aliases": [
-        "szklanka",
-        "szklanek",
         "szklanki",
-        ""
+        "",
+        "szklanek",
+        "szklanka"
       ],
       "id": "glass"
     },
     {
       "aliases": [
-        "placka",
+        "wrap",
+        "placki",
+        "wrapow",
+        "placek",
         "plackow",
         "wrap\u00f3w",
         "plack\u00f3w",
-        "placki",
-        "wrap",
-        "placek",
-        "wrapow"
+        "placka"
       ],
       "id": "wrap"
     },
     {
       "aliases": [
-        "kula",
+        "kuli",
         "kule",
-        "kuli"
+        "kula"
       ],
       "id": "ball"
     },
     {
       "aliases": [
-        "kulka",
-        "kulki"
+        "kulki",
+        "kulka"
       ],
       "id": "smallball"
     },
     {
       "aliases": [
-        "puszka",
+        "puszek",
         "puszki",
-        "puszek"
+        "puszka"
       ],
       "id": "can"
     },
     {
       "aliases": [
-        "baton",
+        "batonow",
+        "tabliczek",
+        "batony",
         "batona",
         "tabliczka",
         "baton\u00f3w",
-        "batonow",
-        "batony",
-        "tabliczek"
+        "baton"
       ],
       "id": "bar"
     },
     {
       "aliases": [
-        "plaster",
+        "plastrow",
+        "kromki",
+        "kromka",
         "kromek",
         "plastry",
         "plastr\u00f3w",
-        "plastrow",
-        "kromka",
-        "kromki"
+        "plaster"
       ],
       "id": "slice"
     },
@@ -114,1504 +1595,24 @@
     },
     {
       "aliases": [
-        "kawa\u0142ki",
+        "kawa\u0142ek",
+        "kawalki",
         "kawalkow",
         "kawalek",
         "kawa\u0142k\u00f3w",
-        "kawa\u0142ek",
-        "kawalki"
+        "kawa\u0142ki"
       ],
       "id": "piece"
     },
     {
       "aliases": [
-        "gar\u015b\u0107",
-        "gar\u015bcie",
         "garsc",
-        "garscie"
+        "garscie",
+        "gar\u015bcie",
+        "gar\u015b\u0107"
       ],
       "id": "handful"
     }
   ],
-  "version": 1582301244.5374632,
-  "products": [
-    {
-      "mods": {
-        "unit": "56"
-      },
-      "nutrition": {
-        "kcal": 143.0,
-        "fat": 9.51,
-        "carbs": 0.72,
-        "protein": 12.56
-      },
-      "name": "jajko",
-      "id": "1",
-      "aliases": [
-        "jajka",
-        "jajko",
-        "jajo",
-        "jajek",
-        "jaja",
-        "\ud83e\udd5a"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "56",
-        "teaspoon": "6",
-        "spoon": "12",
-        "glass": "200"
-      },
-      "nutrition": {
-        "kcal": 405.0,
-        "fat": 0.0,
-        "carbs": 100.0,
-        "protein": 0.0
-      },
-      "name": "cukier",
-      "id": "2",
-      "aliases": [
-        "cukru",
-        "cukrowi",
-        "cukrem",
-        "cukru"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "50"
-      },
-      "nutrition": {
-        "kcal": 50.0,
-        "fat": 0.4,
-        "carbs": 10.1,
-        "protein": 0.4
-      },
-      "name": "jab\u0142ko",
-      "id": "3",
-      "aliases": [
-        "jab\u0142ko",
-        "jab\u0142ek",
-        "jab\u0142ka",
-        "japka",
-        "japko",
-        "\ud83c\udf4e",
-        "\ud83c\udf4f"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "62",
-        "wrap": "62"
-      },
-      "nutrition": {
-        "kcal": 319.0,
-        "fat": 5.4,
-        "carbs": 50.4,
-        "protein": 9.7
-      },
-      "name": "placek tortilla",
-      "id": "4",
-      "aliases": [
-        "tortilli",
-        "tortilla",
-        "tortille",
-        "wrap"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "60",
-        "ball": "125"
-      },
-      "nutrition": {
-        "kcal": 254.0,
-        "fat": 16.0,
-        "carbs": 3.0,
-        "protein": 24.0
-      },
-      "name": "mozzarela",
-      "id": "5",
-      "aliases": [
-        "mozzarelli",
-        "mozzarela",
-        "mozzarelle"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "170"
-      },
-      "nutrition": {
-        "kcal": 19.0,
-        "fat": 0.2,
-        "carbs": 2.9,
-        "protein": 0.9
-      },
-      "name": "pomidor",
-      "id": "6",
-      "aliases": [
-        "pomidor",
-        "pomidora",
-        "pomidory",
-        "\ud83c\udf45"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "340",
-        "teaspoon": "10",
-        "spoon": "20"
-      },
-      "nutrition": {
-        "kcal": 340.0,
-        "fat": 34.6,
-        "carbs": 6.3,
-        "protein": 3.7
-      },
-      "name": "pesto",
-      "id": "7",
-      "aliases": [
-        "pesto",
-        "pesta"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "200"
-      },
-      "nutrition": {
-        "kcal": 98.0,
-        "fat": 1.3,
-        "carbs": 0.0,
-        "protein": 21.5
-      },
-      "name": "pier\u015b z kurczaka",
-      "id": "8",
-      "aliases": [
-        "piersi",
-        "piersi z kurczaka"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "330",
-        "can": "330",
-        "ml": "1",
-        "glass": "250"
-      },
-      "nutrition": {
-        "kcal": 42.0,
-        "fat": 0.0,
-        "carbs": 10.6,
-        "protein": 0.0
-      },
-      "name": "coca-cola",
-      "id": "9",
-      "aliases": [
-        "cola",
-        "pepsi",
-        "kola",
-        "koli",
-        "coli"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "47",
-        "bar": "47"
-      },
-      "nutrition": {
-        "kcal": 452.0,
-        "fat": 17.0,
-        "carbs": 70.3,
-        "protein": 3.7
-      },
-      "name": "mars",
-      "id": "10",
-      "aliases": [
-        "mars",
-        "mars\u00f3w",
-        "marsy",
-        "marsa"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "51",
-        "bar": "51"
-      },
-      "nutrition": {
-        "kcal": 483.0,
-        "fat": 22.6,
-        "carbs": 60.7,
-        "protein": 8.6
-      },
-      "name": "snickers",
-      "id": "11",
-      "aliases": [
-        "snickers",
-        "snikers",
-        "snickersa",
-        "snikersa",
-        "snickersow",
-        "snikersow"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "10",
-        "teaspoon": "5",
-        "spoon": "10"
-      },
-      "nutrition": {
-        "kcal": 884.0,
-        "fat": 100.0,
-        "carbs": 0.0,
-        "protein": 0.0
-      },
-      "name": "olej rzepakowy",
-      "id": "12",
-      "aliases": [
-        "oleju rzepakowego",
-        "olej rzepakowy",
-        "oleju"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "20",
-        "slice": "20"
-      },
-      "nutrition": {
-        "kcal": 334.0,
-        "fat": 26.0,
-        "carbs": 0.0,
-        "protein": 25.0
-      },
-      "name": "cheddar\n",
-      "id": "13",
-      "aliases": [
-        "ser cheddar",
-        "sera cheddara",
-        "cheddar",
-        "cheddara"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "150",
-        "teaspoon": "10",
-        "spoon": "20"
-      },
-      "nutrition": {
-        "kcal": 117.0,
-        "fat": 9.0,
-        "carbs": 5.1,
-        "protein": 3.8
-      },
-      "name": "jogurt grecki",
-      "id": "14",
-      "aliases": [
-        "jogurt grecki",
-        "jogurtu greckiego",
-        "greckiego"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "240",
-        "teaspoon": "6",
-        "spoon": "12",
-        "ml": "1",
-        "glass": "240"
-      },
-      "nutrition": {
-        "kcal": 61.0,
-        "fat": 3.2,
-        "carbs": 4.8,
-        "protein": 3.2
-      },
-      "name": "mleko 3.2%",
-      "id": "15",
-      "aliases": [
-        "mleka",
-        "mleko"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "45",
-        "slice": "23"
-      },
-      "nutrition": {
-        "kcal": 247.0,
-        "fat": 1.6,
-        "carbs": 47.6,
-        "protein": 8.0
-      },
-      "name": "chleb tostowy",
-      "id": "16",
-      "aliases": [
-        "chleb tostowy",
-        "tosta",
-        "chleba tostowego",
-        "tost"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "10",
-        "teaspoon": "6",
-        "spoon": "12"
-      },
-      "nutrition": {
-        "kcal": 116.0,
-        "fat": 0.2,
-        "carbs": 26.0,
-        "protein": 1.3
-      },
-      "name": "ketchup",
-      "id": "17",
-      "aliases": [
-        "ketchup",
-        "ketchupu",
-        "keczup",
-        "keczupu",
-        "keczupy",
-        "ketchupu"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "25",
-        "teaspoon": "13",
-        "spoon": "25"
-      },
-      "nutrition": {
-        "kcal": 663.0,
-        "fat": 71.8,
-        "carbs": 3.1,
-        "protein": 1.0
-      },
-      "name": "majonez",
-      "id": "18",
-      "aliases": [
-        "majonezu",
-        "majonez"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "160"
-      },
-      "nutrition": {
-        "kcal": 176.0,
-        "fat": 5.4,
-        "carbs": 27.0,
-        "protein": 3.5
-      },
-      "name": "mcflurry lion czekoladowy",
-      "id": "19",
-      "aliases": [
-        "mcflurry lion czekoladowy",
-        "mcflurry lion czekoladowe"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "190"
-      },
-      "nutrition": {
-        "kcal": 221.0,
-        "fat": 9.5,
-        "carbs": 21.6,
-        "protein": 12.1
-      },
-      "name": "mcchicken",
-      "id": "20",
-      "aliases": [
-        "mcchicken"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "5",
-        "bowl": "200"
-      },
-      "nutrition": {
-        "kcal": 331.0,
-        "fat": 17.4,
-        "carbs": 41.7,
-        "protein": 3.5
-      },
-      "name": "frytki",
-      "id": "21",
-      "aliases": [
-        "frytki",
-        "frytk\u00f3w",
-        "frytek",
-        "frytkow"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "12",
-        "teaspoon": "12",
-        "spoon": "25",
-        "glass": "320"
-      },
-      "nutrition": {
-        "kcal": 324.0,
-        "fat": 0.0,
-        "carbs": 79.5,
-        "protein": 0.3
-      },
-      "name": "mi\u00f3d",
-      "id": "22",
-      "aliases": [
-        "mi\u00f3d",
-        "miodu"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "100",
-        "teaspoon": "8",
-        "spoon": "15",
-        "glass": "170",
-        "can": "285"
-      },
-      "nutrition": {
-        "kcal": 109.0,
-        "fat": 1.2,
-        "carbs": 19.7,
-        "protein": 2.9
-      },
-      "name": "kukurydza konserwowa",
-      "id": "23",
-      "aliases": [
-        "kukurydza",
-        "kukurydzy",
-        "kukurydzy konserwowej"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "600",
-        "slice": "30"
-      },
-      "nutrition": {
-        "kcal": 227.0,
-        "fat": 1.2,
-        "carbs": 47.0,
-        "protein": 6.8
-      },
-      "name": "chleb zwyk\u0142y",
-      "id": "24",
-      "aliases": [
-        "chleb",
-        "chleba",
-        "bochenki chleba",
-        "bochenek chleba"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "70"
-      },
-      "nutrition": {
-        "kcal": 415.0,
-        "fat": 15.5,
-        "carbs": 62.1,
-        "protein": 7.6
-      },
-      "name": "p\u0105czek",
-      "id": "25",
-      "aliases": [
-        "paczki",
-        "p\u0105czki",
-        "p\u0105czk\u00f3w",
-        "paczkow"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "250"
-      },
-      "nutrition": {
-        "kcal": 47.0,
-        "fat": 0.1,
-        "carbs": 12.0,
-        "protein": 0.9
-      },
-      "name": "pomara\u0144cza\n",
-      "id": "26",
-      "aliases": [
-        "pomara\u0144czy",
-        "pomara\u0144cza",
-        "pomarancza",
-        "pomaranczy",
-        "\ud83c\udf4a",
-        "orange"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "5"
-      },
-      "nutrition": {
-        "kcal": 60.0,
-        "fat": 0.9,
-        "carbs": 11.8,
-        "protein": 1.2
-      },
-      "name": "agrest",
-      "id": "27",
-      "aliases": [
-        "agrest",
-        "agresty",
-        "agrest\u00f3w"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "50"
-      },
-      "nutrition": {
-        "kcal": 33.0,
-        "fat": 0.0,
-        "carbs": 7.8,
-        "protein": 0.2
-      },
-      "name": "ananas",
-      "id": "28",
-      "aliases": [
-        "ananas",
-        "ananasu",
-        "ananasem",
-        "ananasa"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "2000",
-        "piece": "350"
-      },
-      "nutrition": {
-        "kcal": 15.0,
-        "fat": 0.1,
-        "carbs": 3.2,
-        "protein": 0.3
-      },
-      "name": "arbuz",
-      "id": "29",
-      "aliases": [
-        "arbuz",
-        "arbuza",
-        "arbuzem",
-        "arbuzu"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "135"
-      },
-      "nutrition": {
-        "kcal": 160.0,
-        "fat": 15.0,
-        "carbs": 7.0,
-        "protein": 2.0
-      },
-      "name": "awokado",
-      "id": "30",
-      "aliases": [
-        "awokado",
-        "awokadem"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "245"
-      },
-      "nutrition": {
-        "kcal": 26.0,
-        "fat": 0.1,
-        "carbs": 6.3,
-        "protein": 1.1
-      },
-      "name": "bak\u0142a\u017can",
-      "id": "31",
-      "aliases": [
-        "bak\u0142a\u017can",
-        "bak\u0142a\u017cana",
-        "bak\u0142a\u017canem",
-        "baklazanem",
-        "baklazanu",
-        "baklazanem",
-        "bak\u0142a\u017canu",
-        "baklazanu"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "120"
-      },
-      "nutrition": {
-        "kcal": 74.0,
-        "fat": 0.3,
-        "carbs": 17.0,
-        "protein": 0.9
-      },
-      "name": "banan",
-      "id": "32",
-      "aliases": [
-        "banan",
-        "banana"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "30",
-        "handful": "30",
-        "piece": "5"
-      },
-      "nutrition": {
-        "kcal": 360.0,
-        "fat": 1.1,
-        "carbs": 88.8,
-        "protein": 3.8
-      },
-      "name": "banan suszony",
-      "id": "33",
-      "aliases": [
-        "banana suszonego",
-        "banan suszony"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "250",
-        "teaspoon": "6",
-        "spoon": "12",
-        "glass": "200",
-        "bowl": "250"
-      },
-      "nutrition": {
-        "kcal": 126.0,
-        "fat": 9.8,
-        "carbs": 3.8,
-        "protein": 5.6
-      },
-      "name": "bigos",
-      "id": "34",
-      "aliases": [
-        "bigos"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 35.0,
-        "fat": 0.5,
-        "carbs": 5.5,
-        "protein": 2.1
-      },
-      "name": "bo\u0107wina",
-      "id": "35",
-      "aliases": [
-        "bo\u0107wina"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 36.0,
-        "fat": 0.4,
-        "carbs": 2.7,
-        "protein": 5.4
-      },
-      "name": "borowik \u015bwie\u017cy, prawdziwek",
-      "id": "36",
-      "aliases": [
-        "borowik \u015bwie\u017cy",
-        "prawdziwek"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 49.0,
-        "fat": 0.2,
-        "carbs": 12.7,
-        "protein": 0.4
-      },
-      "name": "bor\u00f3wki",
-      "id": "37",
-      "aliases": [
-        "bor\u00f3wki"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 58.0,
-        "fat": 0.4,
-        "carbs": 14.5,
-        "protein": 0.7
-      },
-      "name": "bor\u00f3wki ameryka\u0144skie",
-      "id": "38",
-      "aliases": [
-        "bor\u00f3wki ameryka\u0144skie"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 470.0,
-        "fat": 25.2,
-        "carbs": 56.7,
-        "protein": 4.2
-      },
-      "name": "bounty, baton",
-      "id": "39",
-      "aliases": [
-        "bounty",
-        "baton"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 37.0,
-        "fat": 0.2,
-        "carbs": 5.5,
-        "protein": 3.3
-      },
-      "name": "broku\u0142y",
-      "id": "40",
-      "aliases": [
-        "broku\u0142y"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "85"
-      },
-      "nutrition": {
-        "kcal": 58.0,
-        "fat": 0.5,
-        "carbs": 8.7,
-        "protein": 4.7
-      },
-      "name": "brukselka",
-      "id": "41",
-      "aliases": [
-        "brukselka"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 59.0,
-        "fat": 0.7,
-        "carbs": 11.9,
-        "protein": 1.3
-      },
-      "name": "brzoskwinia",
-      "id": "42",
-      "aliases": [
-        "brzoskwinia"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 288.0,
-        "fat": 1.6,
-        "carbs": 63.3,
-        "protein": 5.0
-      },
-      "name": "brzoskwinia suszona",
-      "id": "43",
-      "aliases": [
-        "brzoskwinia suszona"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 287.0,
-        "fat": 1.7,
-        "carbs": 60.1,
-        "protein": 7.9
-      },
-      "name": "bu\u0142ka bagietka francuska",
-      "id": "44",
-      "aliases": [
-        "bu\u0142ka bagietka francuska"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 198.0,
-        "fat": 1.3,
-        "carbs": 40.0,
-        "protein": 6.5
-      },
-      "name": "bu\u0142ka grahamka",
-      "id": "45",
-      "aliases": [
-        "bu\u0142ka grahamka"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 226.0,
-        "fat": 2.6,
-        "carbs": 44.8,
-        "protein": 5.8
-      },
-      "name": "bu\u0142ka kajzerka",
-      "id": "46",
-      "aliases": [
-        "bu\u0142ka kajzerka"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 252.0,
-        "fat": 4.5,
-        "carbs": 47.0,
-        "protein": 5.9
-      },
-      "name": "bu\u0142ka ma\u015blana",
-      "id": "47",
-      "aliases": [
-        "bu\u0142ka ma\u015blana"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "140"
-      },
-      "nutrition": {
-        "kcal": 46.0,
-        "fat": 0.1,
-        "carbs": 9.8,
-        "protein": 1.8
-      },
-      "name": "buraki",
-      "id": "48",
-      "aliases": [
-        "buraki",
-        "burak",
-        "burak\u00f3w",
-        "borakow"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "180"
-      },
-      "nutrition": {
-        "kcal": 37.0,
-        "fat": 0.4,
-        "carbs": 6.9,
-        "protein": 1.4
-      },
-      "name": "cebula",
-      "id": "49",
-      "aliases": [
-        "cebula"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 331.0,
-        "fat": 7.0,
-        "carbs": 61.6,
-        "protein": 7.0
-      },
-      "name": "cha\u0142ka",
-      "id": "50",
-      "aliases": [
-        "cha\u0142ka"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 385.0,
-        "fat": 2.5,
-        "carbs": 83.6,
-        "protein": 6.9
-      },
-      "name": "corn flakes, p\u0142atki kukurydziane",
-      "id": "51",
-      "aliases": [
-        "corn flakes"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "600"
-      },
-      "nutrition": {
-        "kcal": 18.0,
-        "fat": 0.2,
-        "carbs": 3.0,
-        "protein": 1.0
-      },
-      "name": "cukinia",
-      "id": "52",
-      "aliases": [
-        "cukinia"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 25.0,
-        "fat": 0.2,
-        "carbs": 4.1,
-        "protein": 1.7
-      },
-      "name": "cykoria",
-      "id": "53",
-      "aliases": [
-        "cykoria"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "70"
-      },
-      "nutrition": {
-        "kcal": 46.0,
-        "fat": 0.5,
-        "carbs": 9.5,
-        "protein": 0.8
-      },
-      "name": "cytryna",
-      "id": "54",
-      "aliases": [
-        "cytryna"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 61.0,
-        "fat": 0.9,
-        "carbs": 12.2,
-        "protein": 1.1
-      },
-      "name": "czarne jagody",
-      "id": "55",
-      "aliases": [
-        "czarne jagody"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "100",
-        "piece": "6",
-        "bar": "100"
-      },
-      "nutrition": {
-        "kcal": 526.0,
-        "fat": 30.7,
-        "carbs": 54.2,
-        "protein": 8.0
-      },
-      "name": "czekolada mleczna",
-      "id": "56",
-      "aliases": [
-        "czekolada mleczna",
-        "czekolady mlecznej",
-        "czekolady",
-        "czekolada"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 144.0,
-        "fat": 0.5,
-        "carbs": 28.8,
-        "protein": 6.2
-      },
-      "name": "czosnek",
-      "id": "57",
-      "aliases": [
-        "czosnek"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 589.0,
-        "fat": 52.1,
-        "carbs": 25.1,
-        "protein": 4.8
-      },
-      "name": "faworki",
-      "id": "58",
-      "aliases": [
-        "faworki"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "100"
-      },
-      "nutrition": {
-        "kcal": 65.0,
-        "fat": 0.4,
-        "carbs": 13.2,
-        "protein": 2.4
-      },
-      "name": "granat",
-      "id": "59",
-      "aliases": [
-        "granat"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "250"
-      },
-      "nutrition": {
-        "kcal": 43.0,
-        "fat": 0.2,
-        "carbs": 9.8,
-        "protein": 0.6
-      },
-      "name": "grejpfrut",
-      "id": "60",
-      "aliases": [
-        "grejpfrut"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 349.0,
-        "fat": 1.4,
-        "carbs": 60.2,
-        "protein": 23.8
-      },
-      "name": "groch, suche ziarno",
-      "id": "61",
-      "aliases": [
-        "groch",
-        "suche ziarno"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "130"
-      },
-      "nutrition": {
-        "kcal": 62.0,
-        "fat": 0.2,
-        "carbs": 14.4,
-        "protein": 0.6
-      },
-      "name": "gruszka",
-      "id": "62",
-      "aliases": [
-        "gruszka"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "150",
-        "bowl": "220"
-      },
-      "nutrition": {
-        "kcal": 131.0,
-        "fat": 9.7,
-        "carbs": 0.8,
-        "protein": 10.0
-      },
-      "name": "jajecznica",
-      "id": "63",
-      "aliases": [
-        "jajecznica"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 274.0,
-        "fat": 19.5,
-        "carbs": 14.5,
-        "protein": 9.0
-      },
-      "name": "kaszanka",
-      "id": "64",
-      "aliases": [
-        "kaszanka"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 103.0,
-        "fat": 0.1,
-        "carbs": 25.3,
-        "protein": 0.3
-      },
-      "name": "kisiel",
-      "id": "65",
-      "aliases": [
-        "kisiel"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "70"
-      },
-      "nutrition": {
-        "kcal": 64.0,
-        "fat": 0.5,
-        "carbs": 13.9,
-        "protein": 0.9
-      },
-      "name": "kiwi",
-      "id": "66",
-      "aliases": [
-        "kiwi"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 284.0,
-        "fat": 11.8,
-        "carbs": 21.1,
-        "protein": 13.0
-      },
-      "name": "kotlet mielony",
-      "id": "67",
-      "aliases": [
-        "kotlet mielony"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 357.0,
-        "fat": 24.1,
-        "carbs": 15.9,
-        "protein": 19.0
-      },
-      "name": "kotlet schabowy panierowany",
-      "id": "68",
-      "aliases": [
-        "kotlet schabowy"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 60.0,
-        "fat": 4.4,
-        "carbs": 5.5,
-        "protein": 1.2
-      },
-      "name": "leczo",
-      "id": "69",
-      "aliases": [
-        "leczo"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 384.0,
-        "fat": 2.6,
-        "carbs": 77.4,
-        "protein": 11.5
-      },
-      "name": "makaron dwujajeczny",
-      "id": "70",
-      "aliases": [
-        "makaron dwujajeczny"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 34.0,
-        "fat": 0.2,
-        "carbs": 7.5,
-        "protein": 0.5
-      },
-      "name": "mandarynka",
-      "id": "71",
-      "aliases": [
-        "mandarynka"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 339.0,
-        "fat": 0.1,
-        "carbs": 83.9,
-        "protein": 0.6
-      },
-      "name": "m\u0105ka ziemniaczana",
-      "id": "72",
-      "aliases": [
-        "m\u0105ka ziemniaczana"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 447.0,
-        "fat": 16.2,
-        "carbs": 71.8,
-        "protein": 3.6
-      },
-      "name": "milky way, baton",
-      "id": "73",
-      "aliases": [
-        "milky way",
-        "baton"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 321.0,
-        "fat": 1.2,
-        "carbs": 72.2,
-        "protein": 5.4
-      },
-      "name": "morele suszone",
-      "id": "74",
-      "aliases": [
-        "morele suszone"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 370.0,
-        "fat": 6.8,
-        "carbs": 68.1,
-        "protein": 9.1
-      },
-      "name": "muesli, musli",
-      "id": "75",
-      "aliases": [
-        "muesli",
-        "musli"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 168.0,
-        "fat": 6.4,
-        "carbs": 22.0,
-        "protein": 5.7
-      },
-      "name": "musztarda",
-      "id": "76",
-      "aliases": [
-        "musztarda"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "85"
-      },
-      "nutrition": {
-        "kcal": 222.0,
-        "fat": 5.5,
-        "carbs": 35.7,
-        "protein": 6.5
-      },
-      "name": "nale\u015bniki",
-      "id": "77",
-      "aliases": [
-        "nale\u015bniki"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "180"
-      },
-      "nutrition": {
-        "kcal": 15.0,
-        "fat": 0.1,
-        "carbs": 2.9,
-        "protein": 0.7
-      },
-      "name": "og\u00f3rek",
-      "id": "78",
-      "aliases": [
-        "og\u00f3rek"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "60"
-      },
-      "nutrition": {
-        "kcal": 12.0,
-        "fat": 0.2,
-        "carbs": 1.9,
-        "protein": 0.7
-      },
-      "name": "og\u00f3rek kiszony",
-      "id": "79",
-      "aliases": [
-        "og\u00f3rek kiszony"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "4"
-      },
-      "nutrition": {
-        "kcal": 147.0,
-        "fat": 13.9,
-        "carbs": 4.1,
-        "protein": 1.4
-      },
-      "name": "oliwki",
-      "id": "80",
-      "aliases": [
-        "oliwki"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 384.0,
-        "fat": 4.9,
-        "carbs": 75.2,
-        "protein": 9.9
-      },
-      "name": "paluszki s\u0142one",
-      "id": "81",
-      "aliases": [
-        "paluszki s\u0142one"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 347.0,
-        "fat": 34.3,
-        "carbs": 0.7,
-        "protein": 9.5
-      },
-      "name": "par\u00f3wki popularne",
-      "id": "82",
-      "aliases": [
-        "par\u00f3wki popularne"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 239.0,
-        "fat": 14.6,
-        "carbs": 23.9,
-        "protein": 3.6
-      },
-      "name": "placki ziemniaczane",
-      "id": "83",
-      "aliases": [
-        "placki ziemniaczane"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 98.0,
-        "fat": 0.5,
-        "carbs": 3.5,
-        "protein": 19.8
-      },
-      "name": "ser twarogowy chudy",
-      "id": "84",
-      "aliases": [
-        "ser twarogowy chudy"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 132.0,
-        "fat": 4.7,
-        "carbs": 3.7,
-        "protein": 18.7
-      },
-      "name": "ser twarogowy p\u00f3\u0142t\u0142usty",
-      "id": "85",
-      "aliases": [
-        "ser twarogowy p\u00f3\u0142t\u0142usty"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 176.0,
-        "fat": 10.1,
-        "carbs": 3.5,
-        "protein": 17.7
-      },
-      "name": "ser twarogowy t\u0142usty",
-      "id": "86",
-      "aliases": [
-        "ser twarogowy t\u0142usty"
-      ]
-    },
-    {
-      "mods": {
-        "unit": "10"
-      },
-      "nutrition": {
-        "kcal": 36.0,
-        "fat": 0.5,
-        "carbs": 7.2,
-        "protein": 0.7
-      },
-      "name": "truskawki",
-      "id": "87",
-      "aliases": [
-        "truskawki"
-      ]
-    },
-    {
-      "mods": {},
-      "nutrition": {
-        "kcal": 487.0,
-        "fat": 23.2,
-        "carbs": 64.2,
-        "protein": 5.3
-      },
-      "name": "twix, baton",
-      "id": "88",
-      "aliases": [
-        "twix",
-        "twixy"
-      ]
-    }
-  ]
+  "version": 1582301595.536549
 }
