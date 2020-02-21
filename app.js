@@ -192,7 +192,7 @@ function extractModifier(string){
   for (let key in $db['mods']) {
     var value = $db['mods'][key]
     for (let kaliases in value['aliases']) {
-      var alias_string = value['aliases'][kaliases]
+      var alias_string = value['aliases'][kaliases].toLowerCase()
       if ((alias_string !== "") && (string.includes(alias_string+" "))) {
         
         return {alias: alias_string, mod : value['id']}
@@ -203,6 +203,7 @@ function extractModifier(string){
 }
 
 function quantityWords(quantity){
+  quantity = quantity.toLowerCase()
   if(quantity === "pół" || quantity === "pol" || quantity === "1/2"){
     return 0.5 
   }else if(quantity === "1/3"){

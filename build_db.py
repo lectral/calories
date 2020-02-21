@@ -59,6 +59,7 @@ mods = [
 ]
 
 def parseNumberData(dd):
+	print(dd)
 	return float(dd.replace(",","."))
 mods_db = []
 
@@ -87,7 +88,7 @@ for products_sheet in products_sheet:
 				mods_out[mod] = products_sheet[mod]
 		else:
 			pass
-
+	print(products_sheet['id'])
 	new_product = {
 		"id" : products_sheet['id'],
 		"name" : products_sheet['name'],
