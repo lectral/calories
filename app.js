@@ -147,7 +147,7 @@ function parseInput(input) {
   var regex = /. .*/g;
   
   var string_words = input.split(" ")
- 
+  input = input.toLowerCase()
   var dict = {
     "input": input,
     "quantity": 1,
@@ -169,7 +169,7 @@ function parseInput(input) {
   }
 
   dict['foodItem'] = input.replace(/^\s+|\s+$/g, ''); 
-  
+  console.log(dict)
   return dict
 }
 
@@ -193,7 +193,9 @@ function extractModifier(string){
     var value = $db['mods'][key]
     for (let kaliases in value['aliases']) {
       var alias_string = value['aliases'][kaliases].toLowerCase()
-      if ((alias_string !== "") && (string.includes(alias_string+" "))) {
+      
+      
+      if ((alias_string !== "") && (string.toLowerCase().includes(alias_string+" "))) {
         
         return {alias: alias_string, mod : value['id']}
       }

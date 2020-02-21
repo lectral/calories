@@ -79,7 +79,7 @@ function onNextDate(event) {
 
 function onItemClick(event){
   var item_id = event.target.id.split("-")[2]
-  console.log("#delete-id-" + item_id)
+  
   var delete_icon = document.querySelector("#delete-id-"+item_id)
   if(delete_icon.classList.contains("hidden")){
     delete_icon.classList.remove("hidden")
@@ -91,7 +91,7 @@ function onItemClick(event){
 function onThemeChange(event){
 
   darkmode.toggle();
-  console.log(darkmode.isActivated()) // will return true
+  
   if (darkmode.isActivated()) {
     $themeChanger.textContent = "JASNY"
   } else {
@@ -104,7 +104,7 @@ async function onDateChanged() {
   $date.innerHTML = getCurrentSelectedDate()
   cleanStateItems();
   cleanSummary();
-  console.log("hhmm")
+  
   getDiaryItems(getCurrentSelectedDate(), function (data) {
     if (data) {
       for (let index in data.items) {
@@ -123,10 +123,10 @@ async function onDateChanged() {
 
 function onDateChangeCompleted(){
   if ($demo) {
-    console.log("lodingdemo1")
-    console.log($state.diary.items)
+    
+    
     if ($state['diary']['items'].length === 0) {
-      console.log("lodingdemo2")
+      
 
       addItemToState("1 jabłko")
       addItemToState("1/2 szklanki mleka")
