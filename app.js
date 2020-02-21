@@ -70,7 +70,7 @@ function quantityToGrams(quantityMod, db_data){
   if (quantityMod === 'unit') {
     var grams = db_data['mods']['unit']
   } else {
-    var mod = findModifier(quantityMod)
+    var mod = quantityMod
     if (mod === "gram") {
       var grams = 1
     } else {
@@ -125,46 +125,65 @@ function findFoodItem(item) {
   }
   return false;
 }
+
+
 function parseInput(input) {
   var regex = /. .*/g;
   console.log(input)
-  var found = input.split(" ").filter(Boolean)
+  var string_words = input.split(" ")
+ 
   var dict = {
     "input": input,
-    "quantity": 0,
+    "quantity": 1,
     "quantityMod": "unit",
     "foodItem": ""
   }
-  if (found.length === 1) {
-    dict['quantity'] = 1
-    dict['foodItem'] = found[0]
+
+  var modifier = extractModifier(input)
+  if(modifier !== false){
+    dict.quantityMod = modifier.mod
+    input = input.replace(modifier.alias,"")
   }
 
-  if (found.length === 2) {
-    if (!isNaN(found[0])) {
-      dict['quantity'] = found[0]
-    } else {
-      dict['quantity'] = 1
-      dict['quantityMod'] = found[0]
-    }
-    dict['foodItem'] = found[1]
+  var quantity = extractQuantity(input)
+  console.log(quantity)
+  if(quantity !== false){
+    dict.quantity = quantity.quantity
+    input = input.replace(quantity.raw, "")
   }
 
-  if (found.length >= 3) {
-    if (!isNaN(found[0])) {
-      dict['quantity'] = found[0]
-    } else {
-      dict['quantity'] = quantityWords(found[0])
-    }
-    dict['quantityMod'] = found[1]
-    if (found.length < 3) {
-      dict['foodItem'] = found.slice(2)
-      dict['foodItem'] = dict['foodItem'].join(' ')
-    } else {
-      dict['foodItem'] = found[2]
-    }
-  }
+  dict['foodItem'] = input.replace(/^\s+|\s+$/g, ''); 
+  console.log(dict)
   return dict
+}
+
+function extractQuantity(string){
+  var words = string.split(" ")
+  for(let idx in words){
+    qwords = quantityWords(words[idx])
+    if(!isNaN(words[idx]) && (words[idx] !== "")){
+      console.log("a")
+      return {quantity: parseInt(words[idx]), raw: words[idx]}
+    }else if(qwords !== -1){
+      console.log("b")
+      return { quantity: qwords, raw: words[idx] }
+    }
+    return false;
+  }
+}
+
+function extractModifier(string){
+  for (let key in $db['mods']) {
+    var value = $db['mods'][key]
+    for (let kaliases in value['aliases']) {
+      var alias_string = value['aliases'][kaliases]
+      if ((alias_string !== "") && (string.includes(alias_string+" "))) {
+        console.log("c: " + alias_string + "  " + string)
+        return {alias: alias_string, mod : value['id']}
+      }
+    }
+  }
+  return false
 }
 
 function quantityWords(quantity){
@@ -175,7 +194,7 @@ function quantityWords(quantity){
   }else if(quantity === "1/4"){
     return 0.25
   }else{
-    return 1
+    return -1
   }
 }
 

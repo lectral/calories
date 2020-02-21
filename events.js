@@ -33,6 +33,7 @@ function onItemAdd(event){
   var db_data = findFoodItem(event.detail.parsed.foodItem)
   if(db_data){
     console.log("db dta found")
+    console.log(db_data);
     var nutrients = calculateNutrients(event.detail.parsed, db_data)
     addToSummary(event.detail.raw.id, nutrients)
     span_item.innerHTML = event.detail.raw.string + " - " + nutrients.kcal + " kcal";
