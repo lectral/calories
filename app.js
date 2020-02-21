@@ -169,7 +169,6 @@ function parseInput(input) {
   }
 
   dict['foodItem'] = input.replace(/^\s+|\s+$/g, ''); 
-  console.log(dict)
   return dict
 }
 

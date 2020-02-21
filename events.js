@@ -58,9 +58,12 @@ function onItemAdd(event){
 function onNewCommand(event) {
   if (event.which === 13) {
     const textContent = event.target.textContent
+    var splitted_text = event.target.textContent.split("\n")
     event.preventDefault();
     if(textContent !== ""){
-      addItemToState(textContent)
+      for(let index in splitted_text){
+        addItemToState(splitted_text[index])
+      }
       
       saveStateToDb();
     }
