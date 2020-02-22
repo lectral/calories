@@ -6,6 +6,7 @@ Prototype calories counter app that understands natural language. (Only in Polis
 
 ## Examples
 Examples of what app understands:
+```
 2 tuziny jajek
 1/2 łyzki masła
 kopa jajek
@@ -17,5 +18,5 @@ duże jabłko
 3 🍎
 pól puszki koli
 2 marsy
-...
-and so on :)
+```
+...and so on :)
