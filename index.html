@@ -49,57 +49,9 @@
     
     </div>
     <div class="row">
-  <div class="container app-space" id="main">
-    <!-- Date selector section -->
-    <div class="row">
-      <div class="twelve columns header">
-        <button class="datechange" id="date-left">&lt;</button>
-        <span id="date">-</span>
-        <button class="datechange" id="date-right">&gt;</button>
-        <div class="u-pull-right" id="settings-icon"><span>S</span></div>
+      <div class="container app-space" id="app">
       </div>
-    </div>
-
-    <!-- Food items section -->
-    <div class="row summary section">
-      <div class="twelve columns">
-        <div class="items row" id="items">
-        </div>
-      </div>
-    </div>
-
-    <!-- Commands section -->
-    <div class="row">
-      <div contenteditable="true" class="commands" id="command" autocapitalize="none"></div>
-    </div>
-
-    <!-- Summary section -->
-    <div class="row">
-      <div class="summary" id="summary">^ Kliknij i dodaj jakieś papu</div>
-    </div>
-
-    <div class="overlay row">
-      <div class="row"></div>
-
-    </div>
-  </div>
-<div class="container hidden app-space" id="settings">
-  <div class="row">
-    <div class="twelve columns">
-      <div class="u-pull-right" id="close-settings-icon"><span>X</span></div>
-    </div>
-
-    <div class="row section">
-      <div class="twelve columns">
-        <label for="calorieLimitInput">Limit kalorii</label>
-        <input class="u-full-width" type="text" placeholder="1800" id="calorieLimitInput">
-          <label for="calorieLimitInput">Kolor</label>
-          <button class="button button-primary" id="theme-changer"></button>
-      </div>
-    </div>
-  </div>
-</div>
- 
+    
   </div>
   </div>
   <!-- Service Worker for PWA -->
@@ -121,6 +73,7 @@
   <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.5/lib/darkmode-js.min.js"></script>
   <script src="utils.js"></script>
   <script src="app.js"></script>
+  <script>renderApp()</script>
   <script src="events.js"></script>
   <script>
     let deferredPrompt;

@@ -3,18 +3,21 @@ if (!window.indexedDB) {
     "Your browser doesn't support a stable version of IndexedDB. Such and such feature will not be available."
   );
 }
-const $source = document.querySelector('#command');
-const $container = document.querySelector('.container');
-const $date = document.querySelector("#date")
-const $dateleft = document.querySelector('#date-left');
-const $dateright = document.querySelector('#date-right');
-const $items = document.querySelector('#items');
-const $summary = document.querySelector('#summary')
-const $settingsIcon = document.querySelector("#settings-icon")
-const $closeSettingsIcon = document.querySelector("#close-settings-icon")
-const $main = document.querySelector("#main")
-const $settings = document.querySelector("#settings")
-const $themeChanger = document.querySelector("#theme-changer")
+
+var $app = document.querySelector('#app');
+
+// var $source = document.querySelector('#command');
+// var $container = document.querySelector('.container');
+// var $date = document.querySelector("#date")
+// var $dateleft = document.querySelector('#date-left');
+// var $dateright = document.querySelector('#date-right');
+// var $items = document.querySelector('#items');
+// var $summary = document.querySelector('#summary')
+// var $settingsIcon = document.querySelector("#settings-icon")
+// var $closeSettingsIcon = document.querySelector("#close-settings-icon")
+// var $main = document.querySelector("#main")
+// var $settings = document.querySelector("#settings")
+// var $themeChanger = document.querySelector("#theme-changer")
 var options = {
   bottom: '64px', // default: '32px'
   right: 'unset', // default: '32px'
@@ -41,6 +44,10 @@ var $state = {
   "app": {
     "current_date": getDate()
   },
+  "settings" :{
+    "jsonbin-url" : "...",
+    "jsonbin-key": "$2b$10$7rxVxAI4j1zZO2qTuCuX/ ertrvvBIWM6BUOWz1tFcHS9w2Yltwf / C"
+  },
   "summary": {
     "total_kcal": 0,
     "protein": 0,
@@ -48,6 +55,20 @@ var $state = {
     "carbs": 0
   },
   "summary2" : []
+}
+
+function renderApp(){
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'app.html', true);
+  xhr.onreadystatechange = function () {
+    if (this.readyState !== 4) return;
+    if (this.status !== 200) return; // or whatever error handling you want
+    document.getElementById('app').innerHTML = this.responseText;
+    var $themeChanger = document.querySelector("#theme-changer")
+    init();
+
+  };
+  xhr.send();
 }
 
 function init() {
@@ -63,7 +84,7 @@ function init() {
       $database = event.target.result
       
       //loadState($state.app.current_date);
-      $container.dispatchEvent(new CustomEvent('appinit', {}))
+      $app.dispatchEvent(new CustomEvent('appinit', {}))
     }
     request.onupgradeneeded = function (event) {
       
@@ -152,7 +173,8 @@ function parseInput(input) {
     "input": input,
     "quantity": 1,
     "quantityMod": "unit",
-    "foodItem": ""
+    "foodItem": "",
+    "custom" : {}
   }
 
   var modifier = extractModifier(input)
@@ -167,6 +189,41 @@ function parseInput(input) {
     dict.quantity = quantity.quantity
     input = input.replace(quantity.raw, "")
   }
+
+  var custom = extractCustomKcal(input)
+  if(custom){
+    console.log("ah: "+custom)
+    input = input.replace(custom, "")
+    dict['input'] = dict['input'].replace(custom,"")
+    dict['custom']['kcal'] = parseInt(custom.replace(" kcal", "").replace(/^\s+|\s+$/g, '')); 
+    dict['custom']['protein'] = 0
+    dict['custom']['fat'] = 0
+    dict['custom']['carbs'] = 0
+    custom = extractCustomProtein(input)
+    //[TO DO] REWRITE THIS!!!
+    if (custom) {
+      console.log("a: "+custom)
+      input = input.replace(custom, "")
+      dict['input'] = dict['input'].replace(custom, "")
+      dict['custom']['protein'] = parseInt(custom.replace("b", "").replace(/^\s+|\s+$/g, ''));
+    }
+    custom = extractCustomFat(input)
+    if (custom) {
+      console.log("b: " + custom)
+      input = input.replace(custom, "")
+      dict['input'] = dict['input'].replace(custom, "")
+      dict['custom']['fat'] = parseInt(custom.replace("t", "").replace(/^\s+|\s+$/g, ''));
+    }
+    custom = extractCustomCarbs(input)
+    if (custom) {
+      console.log("c: " + custom)
+      input = input.replace(custom, "")
+      dict['input'] = dict['input'].replace(custom, "")
+      dict['custom']['carbs'] = parseInt(custom.replace("w", "").replace(/^\s+|\s+$/g, ''));
+    }
+  }
+  
+  console.log(dict)
 
   dict['foodItem'] = input.replace(/^\s+|\s+$/g, ''); 
   return dict
@@ -202,6 +259,50 @@ function extractModifier(string){
   }
   return false
 }
+
+function extractCustomKcal(string){
+  const rxp = / [0-9]+ kcal/g;
+  const found = string.match(rxp)
+  if(found){
+    return found[0]
+  }else{
+    return false;
+  }
+}
+
+function extractCustomProtein(string) {
+  console.log(string)
+  const rxp = / [0-9]+b/g;
+  const found = string.match(rxp)
+  if (found) {
+    return found[0]
+  } else {
+    return false;
+  }
+}
+
+function extractCustomFat(string) {
+  console.log(string)
+  const rxp = / [0-9]+t/g;
+  const found = string.match(rxp)
+  if (found) {
+    return found[0]
+  } else {
+    return false;
+  }
+}
+
+function extractCustomCarbs(string) {
+  console.log(string)
+  const rxp = / [0-9]+w/g;
+  const found = string.match(rxp)
+  if (found) {
+    return found[0]
+  } else {
+    return false;
+  }
+}
+
 
 function quantityWords(quantity){
   quantity = quantity.toLowerCase()
@@ -288,7 +389,7 @@ function addItemToState(item_string, item_id){
   }
   $state['diary']['items'].push(new_item)
   var parsed_item = parseInput(item_string)
-  $container.dispatchEvent(new CustomEvent('item added',{
+  $app.dispatchEvent(new CustomEvent('item added',{
     detail : {
         raw : new_item, 
         parsed: parsed_item
@@ -301,7 +402,7 @@ function removeItemFromState(id) {
     
     return obj.id !== id;
   });
-  $container.dispatchEvent(new CustomEvent('item deleted',{detail : {id : id}}))
+  $app.dispatchEvent(new CustomEvent('item deleted',{detail : {id : id}}))
 }
 function getCurrentSelectedDate(){
   return $state['app']['current_date']
@@ -316,7 +417,7 @@ function updateSummary(data) {
   $state.summary.protein = $state.summary.protein + data.protein
   $state.summary.carbs = $state.summary.carbs + data.carbs
   $state.summary.fat = $state.summary.fat + data.fat
-  $summary.dispatchEvent(new CustomEvent("summary updated",{}))
+  $app.dispatchEvent(new CustomEvent("summary updated",{}))
 }
 
 function addToSummary(id, data) {
@@ -325,13 +426,13 @@ function addToSummary(id, data) {
     "nutrients" : data
   }
   $state.summary2.push(data)
-  
-  $summary.dispatchEvent(new CustomEvent("summary updated", {}))
+  console.log("ah")
+  $app.dispatchEvent(new CustomEvent("summary updated", {}))
 }
 
 function cleanSummary(){
   $state.summary2 = []
-  $summary.dispatchEvent(new CustomEvent('summary updated', {}))
+  $app.dispatchEvent(new CustomEvent('summary updated', {}))
 }
 
 function removeFromSummary(id) {
@@ -340,21 +441,19 @@ function removeFromSummary(id) {
     return obj.id !== id;
   });
   
-  $summary.dispatchEvent(new CustomEvent('summary updated', { detail: { id: id } }))
+  $app.dispatchEvent(new CustomEvent('summary updated', { detail: { id: id } }))
 }
 
 function updateDate(date){
   $state['app']['current_date'] = date
-  $container.dispatchEvent(new CustomEvent("date changed",{}))
+  $app.dispatchEvent(new CustomEvent("date changed",{}))
 }
 
 function cleanStateItems(){
   $state['diary']['items'] = []
-  $container.dispatchEvent(new CustomEvent("on items clean",{}))
+  $app.dispatchEvent(new CustomEvent("on items clean",{}))
 }
 
 function loadStateFromDb(){
 
 }
-
-init()

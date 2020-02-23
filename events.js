@@ -1,6 +1,40 @@
 var $deleteTimer
+var $app = document.querySelector('#app');
+$app.addEventListener('appinit', onInit)
+
+var $source, $container,$date,$dateleft,$dateright,$items,$summary,$settingsIcon,$closeSettingsIcon,
+$main,$settingsIcon,$themeChanger
+
+function registerEvents(){
+  $source = document.querySelector('#command');
+  $container = document.querySelector('.container');
+  $date = document.querySelector("#date")
+  $dateleft = document.querySelector('#date-left');
+  $dateright = document.querySelector('#date-right');
+  $items = document.querySelector('#items');
+  $summary = document.querySelector('#summary')
+  $settingsIcon = document.querySelector("#settings-icon")
+  $closeSettingsIcon = document.querySelector("#close-settings-icon")
+  $main = document.querySelector("#main")
+  $settings = document.querySelector("#settings")
+  $themeChanger = document.querySelector("#theme-changer")
+
+  $app.addEventListener('item added', onItemAdd)
+  $app.addEventListener('on items clean', onItemsClean)
+  $app.addEventListener('date changed', onDateChanged)
+  $app.addEventListener('item deleted', onItemDelete)
+  $app.addEventListener('summary updated', onSummaryUpdate)
+  $app.addEventListener('keypress', onNewCommand);
+
+  $settingsIcon.addEventListener('click', onSettingsClick)
+  $themeChanger.addEventListener('click', onThemeChange)
+  $closeSettingsIcon.addEventListener('click', onCloseSettingsClick)
+  $dateleft.addEventListener('click', onPreviousDate);
+  $dateright.addEventListener('click', onNextDate);
+}
 
 function onInit(event) {
+  registerEvents();
   if (darkmode.isActivated()) {
     $themeChanger.textContent = "JASNY"
   } else {
@@ -24,19 +58,21 @@ function onDeleteClick(event){
 }
 
 function onItemAdd(event){
-  
   var div = document.createElement("div");
   var span_item = document.createElement("div")
   div.classList.add("flex")
   span_item.classList.add("item")
   var span_delete = document.createElement("div")
   var db_data = findFoodItem(event.detail.parsed.foodItem)
+  console.log(db_data)
   if(db_data){
-    
-    
     var nutrients = calculateNutrients(event.detail.parsed, db_data)
     addToSummary(event.detail.raw.id, nutrients)
-    span_item.innerHTML = ""+ event.detail.raw.string + " - " + nutrients.kcal + " kcal"+"";
+    span_item.innerHTML = "" + event.detail.parsed.input + " - " + nutrients.kcal + " kcal"+"";
+  } else if ('kcal' in event.detail.parsed.custom){
+    addToSummary(event.detail.raw.id, event.detail.parsed.custom)
+    span_item.innerHTML = "" + event.detail.parsed.input + " - " + event.detail.parsed.custom.kcal + " kcal" + "";
+    span_item.innerHTML += " (c)"
   }else{
     span_item.innerHTML = ""+event.detail.raw.string +""
   }
@@ -76,7 +112,6 @@ function onPreviousDate(event){
 }
 
 function onNextDate(event) {
-  
   updateDate(modifyDate(getCurrentSelectedDate(),1))
 }
 
@@ -144,7 +179,6 @@ function onUpdate(event) {
 }
 
 function onSummaryUpdate(event){
-  
   var summary = {
     "total_kcal": 0,
     "protein": 0,
@@ -183,16 +217,3 @@ function onCloseSettingsClick(event){
   $main.classList.remove("hidden")
   $settings.classList.add("hidden")
 }
-$container.addEventListener('appinit', onInit)
-$container.addEventListener('item added', onItemAdd)
-$container.addEventListener('on items clean', onItemsClean)
-$container.addEventListener('date changed', onDateChanged)
-$container.addEventListener('item deleted', onItemDelete)
-$summary.addEventListener('summary updated', onSummaryUpdate)
-$source.addEventListener('keypress', onNewCommand);
-
-$settingsIcon.addEventListener('click', onSettingsClick)
-$themeChanger.addEventListener('click', onThemeChange)
-$closeSettingsIcon.addEventListener('click', onCloseSettingsClick)
-$dateleft.addEventListener('click', onPreviousDate);
-$dateright.addEventListener('click', onNextDate);
