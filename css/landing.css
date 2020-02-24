@@ -15,12 +15,21 @@
   text-align: center;
 }
 
+.container {
+  padding: 0px;
+}
+.app-space-padding{
+
+  padding: 20px;
+}
 .app-space {
+  margin: 0 auto;
   margin-top: 2rem;
   max-width: 360px;
   min-height: 340px;
-  border: solid 1px black;
-  padding: 10px;
+  border: solid 1px #494949;
+  border-radius: 10px;
+  /* padding: 10px; */
   overflow-y: auto;
 }
 

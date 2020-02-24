@@ -5,10 +5,39 @@
 body{
   font-size: 1.8em;
 }
-.header {
-  text-align: center;
+
+.center {
+
+  width: 50%;
+  /* background-color: thistle; */
+  margin: 0 auto;
 }
 
+.header {
+  width: 100%;
+  background-color: #494949;
+  color: white;
+}
+.box {
+    display: flex;
+    flex-wrap: wrap; /* Optional. only if you want the items to wrap */
+    justify-content: center; /* For horizontal alignment */
+}
+.box-pull-right {
+   margin-left: auto;
+}
+.header-centered {
+  /* float: none;  */
+  /* position: absolute;  */
+  /* width: 10%;
+  margin: 0 auto; */
+
+  /* transform: translate(-50%, -50%); */
+}
+
+.header button{
+  padding: 0;
+}
 .settings-icon {
   position: absolute;
 }
@@ -27,6 +56,10 @@ body{
   padding-bottom: 5px;
 }
 
+.padding {
+  padding: 10px;
+}
+
 .section {
     border-top: 1px solid 
     #eee;
@@ -34,7 +67,9 @@ body{
     margin-top: 0.2em;
 }
 
+.main{
 
+}
 .commands {
   border: none;
   width: 100%;

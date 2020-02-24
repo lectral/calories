@@ -73,7 +73,7 @@ function renderApp(){
 
 function init() {
   
-  getJSON("https://calories.lectral.now.sh/db.json",function(err, data){
+  getJSON("/db.json",function(err, data){
     $db = data
     
     var request = window.indexedDB.open("calories_diar2y", 2);
