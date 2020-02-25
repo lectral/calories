@@ -146,11 +146,16 @@ function changeTheme(mode){
     $main.classList.add("dark-theme")
     document.body.style.backgroundColor = "#212121";
     $container.classList.add("dark-theme")
+    var metaThemeColor = document.querySelector("meta[name=theme-color]");
+    metaThemeColor.setAttribute("content", "#212121");
     setCookie("darktheme", true, 10000)
+
   }else{
     $main.classList.remove("dark-theme")
     document.body.style.backgroundColor = "#fff";
     $themeChanger.textContent = "CIEMNY"
+    var metaThemeColor = document.querySelector("meta[name=theme-color]");
+    metaThemeColor.setAttribute("content", "#fff");
     $container.classList.remove("dark-theme")
 
     setCookie("darktheme", false, 10000)
