@@ -86,8 +86,11 @@ body{
   font-size: 1.8em;
 }
 
-
+.item {
+  margin-bottom: 10px;
+}
 .item-nutrients{
+  font-size: 0.9em;
   color: #990202;
 }
 
