@@ -57,14 +57,13 @@ function onInit(event) {
 }
 
 function onItemDelete(event) {
-  
   var div = document.querySelector("#id-"+event.detail.id)
   div.remove()
   removeFromSummary(parseInt(event.detail.id))
 }
 
 function onDeleteClick(event){
-  let id = parseInt(event.target.id.split('-')[2])
+  let id = parseInt(event.currentTarget.id.split('-')[2])
   removeItemFromState(id);
   saveStateToDb()
 }
@@ -78,7 +77,7 @@ function onItemAdd(event){
 
   var item = document.createElement("div");
   item.classList.add("item")
-  var span_delete = document.createElement("div")
+  var span_delete = document.querySelector("#delete-template").cloneNode(true)
   
   var db_data = findFoodItem(event.detail.parsed.foodItem)
   if(db_data){
@@ -97,9 +96,6 @@ function onItemAdd(event){
     item_input.innerHTML = ""+event.detail.raw.string +""
   }
   item.id = "id-"+event.detail.raw.id
-  span_delete.textContent = " D"
-  span_delete.classList.add("delete")
-  span_delete.classList.add("hidden")
   span_delete.id = "delete-id-"+event.detail.raw.id
 
   item.addEventListener('click', onItemClick);
@@ -137,8 +133,8 @@ function onNextDate(event) {
 
 function onItemClick(event){
   var item_id = event.currentTarget.id.split("-")[1]
-  
   var delete_icon = document.querySelector("#delete-id-"+item_id)
+  if(delete_icon === null) return;
   if(delete_icon.classList.contains("hidden")){
     delete_icon.classList.remove("hidden")
   }else{

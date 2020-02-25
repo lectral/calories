@@ -73,7 +73,7 @@ function init() {
       $app.dispatchEvent(new CustomEvent('appinit', {}))
     }
     request.onupgradeneeded = function (event) {
-      
+
       $database = event.target.result
       var objectStore = $database.createObjectStore("diary", {
         keyPath: "date"
