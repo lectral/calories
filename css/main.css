@@ -1,110 +1,115 @@
-.darkmode--activated div{
-  color: #fff;
+.dark-theme {
+  color: #ebebeb;
 }
+
+.dark-theme input{
+  color: white;
+  background-color: #212121;
+}
+
+.dark-theme-background {
+  background-color: darkgray;
+}
+
+.dark-theme .bottom-separator{
+  border-color: #ebebeb;
+}
+
+.dark-theme .settings-icon {
+  fill: white;
+}
+
+.top{
+  display: flex;
+  height: 50px;
+}
+
+
+.top-left{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border: 0;
+}
+
+
+.top-center{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+}
+
+#month {
+  font-size: 3rem;
+}
+
+.day {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+
+
+.bottom-separator {
+   border-bottom: 3px solid black;
+}
+
+#day-name {
+  font-size: 2rem;
+ 
+}
+
+#day-number {
+  line-height: 1;
+  font-size: 5rem;
+}
+
+.settings-icon {
+  width: 3rem;
+  height: auto;
+}
+
+
+
+.top-right{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border: 0;
+}
+
 
 body{
   font-size: 1.8em;
 }
 
-.center {
 
-  width: 50%;
-  /* background-color: thistle; */
-  margin: 0 auto;
+.item-nutrients{
+  color: #990202;
 }
 
-.header {
-  width: 100%;
-  background-color: #494949;
-  color: white;
-}
-.box {
-    display: flex;
-    flex-wrap: wrap; /* Optional. only if you want the items to wrap */
-    justify-content: center; /* For horizontal alignment */
-}
-.box-pull-right {
-   margin-left: auto;
-}
-.header-centered {
-  /* float: none;  */
-  /* position: absolute;  */
-  /* width: 10%;
-  margin: 0 auto; */
-
-  /* transform: translate(-50%, -50%); */
-}
-
-.header button{
-  padding: 0;
-}
-.settings-icon {
-  position: absolute;
-}
-
-.datechange {
-  border: none;
-  background-color: transparent;
-  overflow: hidden;
-  outline: none;
-}
-
-.flex {
+.item-input{
   display: flex;
 }
-.item {
-  padding-bottom: 5px;
+
+.delete {
+  margin-left: 5px;
+  color: red;
 }
 
-.padding {
-  padding: 10px;
-}
 
-.section {
-    border-top: 1px solid 
-    #eee;
-    padding-top: 1rem;
-    margin-top: 0.2em;
+#command {
+  /* margin-top: 1rem; */
 }
-
-.main{
-
-}
-.commands {
+#command-input {
   border: none;
-  width: 100%;
-  height: 1.2em;
-  border-bottom: 1px solid #ccc !important;
-}
-
-.hold{
-    -webkit-animation: fadein 2.5s linear 1 normal forwards;
-}
-
-@-webkit-keyframes fadein{
-    from { opacity: 1; }
-    to { opacity: 0; }
+  margin: 0;
+  padding: 0;
 }
 
 .hidden {
   display: none;
-}
-
-.delete {
-  color: red;
-  margin-left: 5px;
-}
-.overlay {
-  display: none;
-  padding: 0 20px;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: white; /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
 }
