@@ -15,6 +15,17 @@ function modifyDate(date, modifier) {
   dateObj.setDate(dateObj.getDate() + modifier)
   return parseDate(dateObj)
 }
+function getMonthName(date){
+  const monthNames = ["Styczeń", "Luty", "Marzec", "Kwieceń", "Maj", "Czerwiec",
+    "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"
+  ];
+  return monthNames[date.getMonth()]
+}
+
+function getDayName(date){
+  const dayNames = ["niedziela","poniedziałek","wtorek","sroda","czwartek","piątek","sobota"]
+  return dayNames[date.getDay()]
+}
 var getJSON = function (url, callback) {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', url, true);
@@ -29,3 +40,26 @@ var getJSON = function (url, callback) {
   };
   xhr.send();
 };
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  var expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}

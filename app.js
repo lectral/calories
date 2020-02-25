@@ -18,21 +18,6 @@ var $app = document.querySelector('#app');
 // var $main = document.querySelector("#main")
 // var $settings = document.querySelector("#settings")
 // var $themeChanger = document.querySelector("#theme-changer")
-var options = {
-  bottom: '64px', // default: '32px'
-  right: 'unset', // default: '32px'
-  left: '32px', // default: 'unset'
-  time: '1s', // default: '0.3s'
-  mixColor: '#fff', // default: '#fff'
-  backgroundColor: '#fff',  // default: '#fff'
-  buttonColorDark: '#100f2c',  // default: '#100f2c'
-  buttonColorLight: '#fff', // default: '#fff'
-  saveInCookies: true, // default: true,
-  label: '🌓', // default: ''
-  autoMatchOsTheme: false // default: true
-}
-
-const darkmode = new Darkmode(options);
 var $deleteTimer;
 var $database
 
@@ -59,7 +44,7 @@ var $state = {
 
 function renderApp(){
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'app.html', true);
+  xhr.open('GET', 'app2.html', true);
   xhr.onreadystatechange = function () {
     if (this.readyState !== 4) return;
     if (this.status !== 200) return; // or whatever error handling you want
@@ -73,7 +58,7 @@ function renderApp(){
 
 function init() {
   
-  getJSON("https://calories.lectral.now.sh/db.json",function(err, data){
+  getJSON("/db.json",function(err, data){
     $db = data
     
     var request = window.indexedDB.open("calories_diar2y", 2);
@@ -192,7 +177,6 @@ function parseInput(input) {
 
   var custom = extractCustomKcal(input)
   if(custom){
-    console.log("ah: "+custom)
     input = input.replace(custom, "")
     dict['input'] = dict['input'].replace(custom,"")
     dict['custom']['kcal'] = parseInt(custom.replace(" kcal", "").replace(/^\s+|\s+$/g, '')); 
@@ -202,28 +186,24 @@ function parseInput(input) {
     custom = extractCustomProtein(input)
     //[TO DO] REWRITE THIS!!!
     if (custom) {
-      console.log("a: "+custom)
       input = input.replace(custom, "")
       dict['input'] = dict['input'].replace(custom, "")
       dict['custom']['protein'] = parseInt(custom.replace("b", "").replace(/^\s+|\s+$/g, ''));
     }
     custom = extractCustomFat(input)
     if (custom) {
-      console.log("b: " + custom)
       input = input.replace(custom, "")
       dict['input'] = dict['input'].replace(custom, "")
       dict['custom']['fat'] = parseInt(custom.replace("t", "").replace(/^\s+|\s+$/g, ''));
     }
     custom = extractCustomCarbs(input)
     if (custom) {
-      console.log("c: " + custom)
       input = input.replace(custom, "")
       dict['input'] = dict['input'].replace(custom, "")
       dict['custom']['carbs'] = parseInt(custom.replace("w", "").replace(/^\s+|\s+$/g, ''));
     }
   }
   
-  console.log(dict)
 
   dict['foodItem'] = input.replace(/^\s+|\s+$/g, ''); 
   return dict
@@ -426,7 +406,6 @@ function addToSummary(id, data) {
     "nutrients" : data
   }
   $state.summary2.push(data)
-  console.log("ah")
   $app.dispatchEvent(new CustomEvent("summary updated", {}))
 }
 
