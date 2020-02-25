@@ -30,8 +30,9 @@ var $state = {
     "current_date": getDate()
   },
   "settings" :{
-    "jsonbin-url" : "...",
-    "jsonbin-key": "$2b$10$7rxVxAI4j1zZO2qTuCuX/ ertrvvBIWM6BUOWz1tFcHS9w2Yltwf / C"
+    "max_kcal" : 1800,
+    "jsonbin-url" : "",
+    "jsonbin-key": ""
   },
   "summary": {
     "total_kcal": 0,
@@ -77,7 +78,6 @@ function init() {
       var objectStore = $database.createObjectStore("diary", {
         keyPath: "date"
       });
-      objectStore.createIndex("string", "string")
       objectStore.transaction.oncomplete = function (event) {
         
       }
@@ -251,7 +251,6 @@ function extractCustomKcal(string){
 }
 
 function extractCustomProtein(string) {
-  console.log(string)
   const rxp = / [0-9]+b/g;
   const found = string.match(rxp)
   if (found) {
@@ -262,7 +261,6 @@ function extractCustomProtein(string) {
 }
 
 function extractCustomFat(string) {
-  console.log(string)
   const rxp = / [0-9]+t/g;
   const found = string.match(rxp)
   if (found) {
@@ -273,7 +271,6 @@ function extractCustomFat(string) {
 }
 
 function extractCustomCarbs(string) {
-  console.log(string)
   const rxp = / [0-9]+w/g;
   const found = string.match(rxp)
   if (found) {
@@ -348,6 +345,10 @@ function saveStateToDb() {
       }
     }
   }
+}
+
+function saveSettingsToDb(){
+
 }
 
 // STATE
@@ -435,4 +436,9 @@ function cleanStateItems(){
 
 function loadStateFromDb(){
 
+}
+
+function updateSettings(setting,value){
+  $state.settings[setting] = value
+  $app.dispatchEvent(new CustomEvent('settings changed', {detail: {setting: setting, value: value}}))
 }

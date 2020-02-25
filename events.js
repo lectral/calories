@@ -23,13 +23,18 @@ function registerEvents(){
   $themeChanger = document.querySelector("#theme-changer")
   $command = document.querySelector("#command-input")
   $home = document.querySelector("#home")
+  $maxKcal = document.querySelector("#calorieLimitInput")
+
 
   $app.addEventListener('item added', onItemAdd)
   $app.addEventListener('on items clean', onItemsClean)
   $app.addEventListener('date changed', onDateChanged)
   $app.addEventListener('item deleted', onItemDelete)
   $app.addEventListener('summary updated', onSummaryUpdate)
+  document.querySelector('#date-left').addEventListener('click', onPreviousDate);
+  document.querySelector('#date-right').addEventListener('click', onNextDate);
   $command.addEventListener('keypress', onNewCommand);
+  $maxKcal.addEventListener('input', onMaxKcalChange);
 
   $settingsIcon.addEventListener('click', onSettingsClick)
   $themeChanger.addEventListener('click', onThemeChange)
@@ -176,10 +181,7 @@ async function onDateChanged() {
   const date = new Date(getCurrentSelectedDate());
   $dateMonth.innerHTML = getMonthName(date)
   $dateDayNumber.innerHTML = date.getDate()
-  $dateDayNumber.innerHTML += "<span id=\"date-left\">L</span>"
-  $dateDayNumber.innerHTML += "<span id=\"date-right\">R</span>"
-  document.querySelector('#date-left').addEventListener('click',onPreviousDate);
-  document.querySelector('#date-right').addEventListener('click', onNextDate);
+  
   $dateDayName.innerHTML = getDayName(date)
   cleanStateItems();
   cleanSummary();
@@ -237,7 +239,8 @@ function onSummaryUpdate(event){
   
   if(summary.total_kcal !== 0){
   $summary.innerHTML = `<span> ${summary.total_kcal} kcal, ${summary.protein}
-  białko, ${summary.fat} tłuszcze, ${summary.carbs} węgle </span>`
+  białko, ${summary.fat} tłuszcze, ${summary.carbs} węgle </span></br>
+  Pozostało ${$state.settings.max_kcal - summary.total_kcal} kcal`
   }else{
     $summary.innerHTML = "<span> ^ Kliknij i dodaj jakieś papu</span>"
   }
@@ -257,4 +260,11 @@ function onCloseSettingsClick(event){
   
   $home.classList.remove("hidden")
   $settings.classList.add("hidden")
+}
+
+
+function onMaxKcalChange(event){
+  var new_value = parseInt(event.target.value)
+  updateSettings('max_kcal',new_value)
+  updateDate(getCurrentSelectedDate());
 }

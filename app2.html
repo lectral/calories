@@ -14,7 +14,14 @@
   <div class="day" id="day"> 
       <div class="day-name bottom-separator" id="day-name">
       </div>
-      <div class="day-number" id="day-number">
+      <div class="flex">
+        <div class="day-number" id="day-number"></div>
+        <svg id="date-left" class="date-button" height="48px" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+          <path d="M0 0h24v24H0V0z" fill="none" />
+          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12l4.58-4.59z" /></svg>
+          <svg id="date-right" height="48px" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+            <path d="M0 0h24v24H0V0z" fill="none" />
+            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z" /></svg>
       </div>
   </div>
 
@@ -45,7 +52,7 @@
     <div class="row section">
       <div class="twelve columns">
         <label for="calorieLimitInput">Limit kalorii</label>
-        <input class="u-full-width" type="text" placeholder="1800" id="calorieLimitInput">
+        <input class="u-full-width" type="number" placeholder="1800" id="calorieLimitInput">
         <label for="calorieLimitInput">Kolor</label>
         <button class="button button-primary" id="theme-changer"></button>
         <label for="calorieLimitInput">JSONbin URL</label>

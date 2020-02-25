@@ -15,16 +15,23 @@
   border-color: #ebebeb;
 }
 
-.dark-theme .settings-icon {
+.dark-theme svg {
   fill: white;
 }
 
 .top{
   display: flex;
   height: 50px;
+  margin-top: 0.5rem;
 }
 
+.flex {
+  display: flex;
+}
 
+.date-button {
+  margin-right: 10px;
+}
 .top-left{
   flex: 1;
   display: flex;
@@ -53,7 +60,7 @@
 
 
 .bottom-separator {
-   border-bottom: 3px solid black;
+   border-bottom: 2px solid black;
 }
 
 #day-name {
@@ -64,6 +71,10 @@
 #day-number {
   line-height: 1;
   font-size: 5rem;
+  width: 20%;
+}
+#summary {
+  margin-bottom: 20px;
 }
 
 .settings-icon {
