@@ -82,6 +82,7 @@ function onItemAdd(event){
     item_nutrients.innerHTML = nutrients.kcal + " kcal, " + nutrients.protein+" białka, "+nutrients.fat+" tłuszczu, "+nutrients.carbs+" węgli" 
     item_input.innerHTML = "" + event.detail.parsed.input;
   } else if ('kcal' in event.detail.parsed.custom){
+    var nutrients = event.detail.parsed.custom
     addToSummary(event.detail.raw.id, event.detail.parsed.custom)
     item_nutrients.innerHTML = nutrients.kcal + " kcal, " + nutrients.protein + " białka, " + nutrients.fat + " tłuszczu, " + nutrients.carbs + " węgli"
     item_input.innerHTML = "" + event.detail.parsed.input
